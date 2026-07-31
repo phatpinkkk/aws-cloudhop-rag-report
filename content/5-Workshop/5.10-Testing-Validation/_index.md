@@ -6,63 +6,57 @@ chapter: false
 pre: " <b> 5.10. </b> "
 ---
 
-After the AWS components are connected, the next step is to verify that the deployed application works correctly from the backend to the browser. This section focuses on functional validation of the deployment rather than retrieval or answer quality.
+After the AWS components are connected, the deployment is validated from the EC2 backend through to the browser. This section focuses on **functional validation**: whether the components can communicate correctly and complete an end-to-end request. Retrieval and answer quality are evaluated separately in Chapter 5.11.
 
-## Backend and Retrieval Validation
+## 1. Backend and Retrieval Validation
 
-The FastAPI backend runs on Amazon EC2 as the `aws-rag-api` systemd service. Its status can be checked with:
+The FastAPI backend runs on Amazon EC2 as the `aws-rag-api` systemd service.
 
-```bash
-sudo systemctl status aws-rag-api
-```
+Its status can be checked with:
 
-The `/health` endpoint confirms that the API is running:
+`sudo systemctl status aws-rag-api`
 
-```bash
-curl http://127.0.0.1:8000/health
-```
+The `/health` endpoint confirms that the application is running:
+
+`curl http://127.0.0.1:8000/health`
 
 The retrieval pipeline can then be initialized through:
 
-```bash
-curl -X POST http://127.0.0.1:8000/warmup
-```
+`curl -X POST http://127.0.0.1:8000/warmup`
 
-A successful warmup confirms that the backend can load the required retrieval artifacts from Amazon S3 and connect to the Amazon S3 Vectors index used for dense retrieval.
+A successful warm-up confirms that the backend can initialize the retrieval components required by the deployed pipeline.
 
-## API and Browser Validation
+## 2. API Gateway Validation
 
-Once the backend works locally on EC2, the same endpoints are tested through Amazon API Gateway. The deployed API exposes:
+Once the backend works directly on EC2, the same application is tested through Amazon API Gateway.
 
-```text
-GET  /health
-POST /warmup
-POST /query
-```
+The deployed API exposes:
 
-The `/health` route verifies that HTTPS requests can reach the EC2 backend through API Gateway. CORS is also checked to confirm that requests from the AWS Amplify frontend are accepted by the API.
+- `GET /health`
+- `POST /warmup`
+- `POST /query`
 
-A real question is then submitted through `/query`. The request succeeds when the backend completes retrieval and generation and returns both the answer and its supporting sources.
+The `/health` route verifies that an HTTPS request can reach the EC2 backend through API Gateway. CORS is also checked to confirm that requests from the AWS Amplify frontend are accepted.
 
-The final check is performed from the deployed Amplify application itself. A successful browser request confirms the complete path:
+A real question is then submitted through `/query`. A successful response confirms that the backend can perform retrieval, generate an answer, and return the supporting sources through the public API.
 
-```text
-Browser
-→ AWS Amplify
-→ Amazon API Gateway
-→ Amazon EC2
-→ Amazon S3 and Amazon S3 Vectors
-→ Groq
-→ Answer and supporting sources
-```
+## 3. Browser Validation
 
-## Validation Results
+The final functional check is performed from the deployed AWS Amplify application.
+
+A successful browser request follows the complete path:
+
+**Browser → AWS Amplify → Amazon API Gateway → Amazon EC2 → Amazon S3 + Amazon S3 Vectors → Groq → Answer + supporting sources**
+
+This confirms that the frontend, API layer, backend, retrieval storage, and external LLM are connected correctly.
+
+## 4. Validation Results
 
 | Validation test | Expected result | Status |
 | --- | --- | --- |
 | EC2 backend | FastAPI service is running | Pass |
-| Health endpoint | HTTP 200 response | Pass |
-| Pipeline warmup | Retrieval pipeline loads successfully | Pass |
+| Health endpoint | Successful response | Pass |
+| Pipeline warm-up | Retrieval pipeline initializes successfully | Pass |
 | Amazon S3 | Required retrieval artifacts are accessible | Pass |
 | Amazon S3 Vectors | Dense retrieval returns results | Pass |
 | API Gateway | HTTPS requests reach the backend | Pass |
@@ -70,4 +64,4 @@ Browser
 | Query endpoint | Answer and supporting sources are returned | Pass |
 | Amplify frontend | Browser displays the completed response | Pass |
 
-The validation confirms that the deployed AWS components operate as one connected application and that a user question can travel through the complete system and return a generated answer with supporting evidence.
+The validation confirms that CloudHop RAG operates as one connected application and that a user question can pass through the complete deployed system and return an answer with supporting evidence.

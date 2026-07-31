@@ -6,61 +6,83 @@ chapter: false
 pre: " <b> 5.11. </b> "
 ---
 
-Sau khi đã xác thực rằng bản triển khai hoạt động đúng, hệ thống được đánh giá trên ba khía cạnh: chất lượng retrieval, chất lượng câu trả lời, và hiệu năng lúc chạy. Toàn bộ kết quả cuối cùng đều sử dụng artifact **HotpotQA Distractor v002** đã được hiệu chỉnh.
+Sau khi xác nhận toàn bộ hệ thống đã hoạt động đúng về mặt chức năng, CloudHop RAG được đánh giá trên ba khía cạnh chính: **chất lượng retrieval, chất lượng câu trả lời và hiệu năng runtime**.
 
-Bộ benchmark retrieval gồm **500 câu hỏi validation**, **4.937 parent document** và **8.279 child vector BGE-M3**. Các chỉ số retrieval được tính ở mức tiêu đề tài liệu hỗ trợ (supporting-document-title), còn chất lượng câu trả lời cuối cùng được đo bằng Exact Match (EM) và F1 ở mức token.
+Toàn bộ kết quả cuối cùng sử dụng bộ artifact **HotpotQA Distractor v002** đã được hiệu chỉnh. Benchmark retrieval gồm **500 câu hỏi validation**, **4.937 parent document** và **8.279 BGE-M3 child vector**.
 
-## Chất lượng Retrieval
+Chất lượng retrieval được đánh giá ở mức **supporting title**, tức là kiểm tra hệ thống có tìm đúng các tài liệu chứa bằng chứng cần thiết hay không. Các số liệu này không phải là metric Supporting-Fact EM/F1 ở mức câu của HotpotQA chính thức. Đối với câu trả lời cuối, hệ thống sử dụng Exact Match (EM) và token-level F1.
 
-Retrieval pipeline được đánh giá ở hai giai đoạn. **Candidate pool** đo xem bằng chứng cần thiết có được tìm thấy hay không, trong khi **Selected Top-10** đo chất lượng xếp hạng của bằng chứng cuối cùng sau bước chọn lọc.
+## 1. Chất lượng Retrieval
 
-| Chỉ số | Candidate Pool | Selected Top-10 |
+Retrieval pipeline được đánh giá ở hai giai đoạn.
+
+**Candidate Pool** cho biết quá trình retrieval có tìm được các supporting document cần thiết trước bước chọn bằng chứng cuối hay không. **Selected Top-10** phản ánh tập tài liệu cuối cùng được giữ lại để sử dụng cho bước sinh câu trả lời.
+
+| Metric | Candidate Pool | Selected Top-10 |
 | --- | ---: | ---: |
-| Recall trung bình theo supporting title | **0.9920** | **0.9740** |
-| Tìm đủ toàn bộ supporting title | **0.9840** | **0.9480** |
+| Mean supporting-title recall | **0.9920** | **0.9740** |
+| All supporting titles found | **0.9840** | **0.9480** |
 | Recall@5 | 0.5420 | **0.9310** |
 | Recall@10 | 0.6270 | **0.9740** |
 | Precision@10 | 0.1254 | **0.1948** |
 | MRR | 0.7807 | **0.9446** |
 | nDCG@10 | 0.5816 | **0.9162** |
 
-Giai đoạn candidate thu hồi được gần như toàn bộ tài liệu hỗ trợ cần thiết, với độ phủ supporting title đầy đủ ở **492 trên 500 câu hỏi**. Sau khi thu hẹp candidate pool xuống mười tài liệu cuối cùng, độ phủ đầy đủ vẫn giữ ở mức cao là **474 trên 500 câu hỏi**.
+Ở giai đoạn candidate, pipeline có độ bao phủ bằng chứng rất cao. Hệ thống tìm đủ toàn bộ supporting title cho **492 trên 500 câu hỏi**, tương ứng tỷ lệ **0.9840**.
 
-Cải thiện rõ rệt nhất nằm ở chất lượng xếp hạng. Recall@5 tăng từ **0.5420 lên 0.9310**, trong khi MRR tăng từ **0.7807 lên 0.9446** và nDCG@10 từ **0.5816 lên 0.9162**. Điều này cho thấy giai đoạn chọn lọc cuối cùng đã đưa bằng chứng liên quan lên gần đầu ngữ cảnh được cấp cho pipeline sinh câu trả lời hơn rất nhiều.
+Sau bước chọn bằng chứng, toàn bộ supporting title vẫn còn trong Top-10 đối với **474 trên 500 câu hỏi**, trong khi mean supporting-title recall vẫn đạt **0.9740**.
 
-## Chất lượng câu trả lời đầu-cuối
+Điểm đáng chú ý là bước chọn cuối giúp đưa các bằng chứng liên quan lên những vị trí cao hơn rõ rệt. Recall@5 tăng từ **0.5420 lên 0.9310**, MRR từ **0.7807 lên 0.9446** và nDCG@10 từ **0.5816 lên 0.9162**. Điều này cho thấy pipeline không chỉ tìm được bằng chứng mà còn sắp xếp chúng tốt hơn trong phần context cuối. Tuy nhiên, khi rút candidate pool lớn xuống còn mười tài liệu, một lượng nhỏ supporting evidence vẫn bị mất.
 
-Một tập cố định gồm **20 câu hỏi** được dùng để đánh giá toàn bộ đường đi từ retrieval tới sinh câu trả lời. Cả 20 câu hỏi đều chạy hoàn tất thành công.
+## 2. Chất lượng câu trả lời End-to-End
 
-| Chỉ số | Kết quả |
+Một tập cố định gồm **20 câu hỏi** được sử dụng để đánh giá toàn bộ pipeline từ retrieval đến answer generation. Cả 20 request đều hoàn thành thành công.
+
+| Metric | Kết quả |
 | --- | ---: |
 | Answer EM | **0.7500** |
 | Answer F1 | **0.7750** |
-| Số câu trả lời đúng | **15 / 20** |
-| Recall của bằng chứng được chọn | **0.9500** |
-| Tìm đủ toàn bộ supporting title | **0.9000** |
+| Câu trả lời exact match | **15 / 20** |
+| Mean supporting-title recall | **0.9500** |
+| All supporting titles found | **0.9000** |
+| Recall@5 | **0.9250** |
+| Recall@10 | **0.9500** |
+| MRR | **0.9667** |
+| nDCG@10 | **0.9243** |
 
-Bằng chứng được chọn chứa đủ toàn bộ tài liệu hỗ trợ cần thiết ở **18 trên 20 câu hỏi**. Khoảng chênh giữa recall của bằng chứng và độ chính xác của câu trả lời cuối cùng cũng cho thấy: tìm đúng tài liệu là điều kiện cần, nhưng kết quả cuối cùng vẫn phụ thuộc vào việc bằng chứng thu được được sử dụng hiệu quả đến đâu trong quá trình sinh câu trả lời.
+Tập bằng chứng cuối chứa đủ toàn bộ supporting title cho **18 trên 20 câu hỏi**. Answer EM đạt **0.7500**, nghĩa là có 15 câu trả lời khớp hoàn toàn với đáp án tham chiếu, còn token-level F1 đạt **0.7750**.
 
-## Hiệu năng lúc chạy
+Khoảng cách giữa độ bao phủ bằng chứng và độ chính xác của câu trả lời cũng là một điểm cần lưu ý. Retrieval tốt giúp tăng khả năng hệ thống có đủ thông tin cần thiết, nhưng câu trả lời cuối vẫn phụ thuộc vào việc generation stage hiểu và kết hợp các bằng chứng đó hiệu quả đến đâu.
 
-Trên toàn bộ benchmark retrieval 500 câu hỏi, pipeline cần trung bình **25,91 giây cho mỗi câu hỏi**.
+## 3. Hiệu năng Runtime
 
-| Giai đoạn | Độ trễ trung bình | Tỉ trọng |
+Trên benchmark retrieval 500 câu hỏi, latency trung bình của toàn bộ retrieval pipeline là **25,91 giây mỗi câu**, với median là **25,72 giây**.
+
+| Giai đoạn | Latency trung bình | Tỷ lệ trong tổng thời gian |
 | --- | ---: | ---: |
-| Tách câu hỏi (query decomposition) | 4,32 s | 16,7% |
-| Retrieval + lập kế hoạch thích ứng | 21,07 s | 81,3% |
-| Rerank bằng cross-encoder | 0,53 s | 2,0% |
-| Tổng retrieval pipeline | **25,91 s** | 100% |
+| Query decomposition | 4,32 s | 16,7% |
+| Retrieval + adaptive planning | 21,07 s | 81,3% |
+| Cross-encoder reranking | 0,53 s | 2,0% |
+| Toàn bộ retrieval pipeline | **25,91 s** | 100% |
 
-Chi phí thời gian chủ yếu đến từ retrieval và lập kế hoạch thích ứng, chứ không phải từ rerank. Bộ reranker chỉ chiếm khoảng 2% tổng độ trễ retrieval nhưng lại mang lại cải thiện đáng kể về chất lượng xếp hạng.
+Phần chiếm nhiều thời gian nhất là **retrieval và adaptive planning**, khoảng 81% tổng latency của retrieval pipeline. Query decomposition chiếm gần 17%, trong khi cross-encoder reranking chỉ chiếm khoảng 2%.
 
-Với benchmark đầu-cuối trên 20 câu hỏi, tổng thời gian phản hồi là:
+Với benchmark end-to-end 20 câu hỏi:
 
-| Thành phần | Độ trễ trung bình |
+| Thành phần | Latency trung bình |
 | --- | ---: |
 | Retrieval pipeline | 26,86 s |
-| Sinh câu trả lời cuối | 12,43 s |
-| Đầu-cuối | **39,29 s** |
+| Final generation | 12,43 s |
+| End-to-end | **39,29 s** |
 
-Những kết quả này cho thấy đánh đổi cốt lõi của CloudHop RAG: retrieval đa bước rộng hơn cùng với rerank giúp cải thiện chất lượng bằng chứng, nhưng đồng thời làm tăng thời gian phản hồi. Vì vậy, môi trường AWS đã triển khai sử dụng một cấu hình production nhẹ hơn để giảm khối lượng retrieval và giữ độ trễ phản hồi ở mức thực tế trên nền EC2.
+Kết quả này cho thấy cả retrieval và generation đều đóng góp đáng kể vào thời gian phản hồi, nhưng retrieval vẫn là thành phần chiếm nhiều thời gian hơn.
+
+## 4. Đánh đổi giữa chất lượng và cấu hình triển khai
+
+Các kết quả ở trên được đo bằng **cấu hình ưu tiên chất lượng**, sử dụng phạm vi retrieval rộng hơn, tối đa ba adaptive hop và cross-encoder reranking.
+
+Trong khi đó, phiên bản triển khai trên AWS sử dụng một cấu hình nhẹ hơn để phù hợp với môi trường EC2 chạy CPU. Cấu hình này giảm số candidate từ BM25 và dense retrieval, giới hạn adaptive retrieval, bật Fast Mode và tắt cross-encoder reranker.
+
+Vì vậy, hai cấu hình nên được hiểu là hai chế độ vận hành của cùng một hệ thống chứ không phải một phép ablation có kiểm soát. Cấu hình evaluation ưu tiên chất lượng retrieval, còn cấu hình triển khai cân bằng thêm thời gian phản hồi và lượng tài nguyên cần sử dụng.
+
+Nhìn chung, kết quả cho thấy CloudHop RAG có thể tìm lại phần lớn supporting evidence cần thiết cho các câu hỏi multi-hop trong HotpotQA và đạt kết quả tốt ở bài toán trả lời ngắn. Thách thức kỹ thuật còn rõ nhất là latency, đặc biệt ở phần retrieval và adaptive planning.

@@ -49,23 +49,11 @@ On some systems, Python may be available as `python3` instead of `python`.
 
 ## AWS CLI Access
 
-Configure the AWS CLI for the account used in this workshop:
+Configure the AWS CLI for the account used in this workshop: `aws configure`
 
-```bash
-aws configure
-```
+Set the default Region to: `ap-southeast-1`
 
-Set the default Region to:
-
-```text
-ap-southeast-1
-```
-
-Then verify the active AWS identity:
-
-```bash
-aws sts get-caller-identity
-```
+Then verify the active AWS identity: `aws sts get-caller-identity`
 
 A successful response confirms that the CLI can authenticate to the AWS account.
 
