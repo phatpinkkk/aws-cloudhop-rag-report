@@ -1,37 +1,35 @@
 ---
 title: "Week 3 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-06-22
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
 
+### Week 3 Objectives
 
-### Week 3 Objectives:
+* Understand the basic machine learning lifecycle and how AI applications can be deployed in cloud environments.
+* Learn text embeddings, vector similarity, and semantic retrieval.
+* Understand Retrieval-Augmented Generation and its role in grounding LLM answers.
+* Study the difference between single-hop and multi-hop question answering.
+* Define the CloudHop RAG project and select a suitable benchmark dataset.
 
-* Understand how to monitor AWS resources with Amazon CloudWatch (metrics, logs, alarms).
-* Understand how Amazon CloudFront works as a CDN and how it integrates with S3.
-* Practice setting up monitoring and content delivery for a simple workload.
+### Tasks to be carried out this week
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                  | Start Date | Completion Date | Reference Material                        |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Learn CloudWatch: <br>&emsp; + Metrics <br>&emsp; + Log groups & log streams <br>&emsp; + Alarms & dashboards                                                                     | 06/22/2026 | 06/22/2026      |                                            |
-| 3   | - **Practice:** create a CloudWatch alarm on EC2 CPU utilization; ship EC2 logs to CloudWatch Logs using the CloudWatch agent                                                       | 06/23/2026 | 06/23/2026      |                                            |
-| 4   | - Learn CloudFront: <br>&emsp; + Distributions & origins (S3/EC2) <br>&emsp; + Edge locations & caching behavior <br>&emsp; + Origin Access Control (OAC)                          | 06/24/2026 | 06/24/2026      |                                            |
-| 5   | - **Practice:** create a CloudFront distribution in front of an S3 bucket, restrict direct S3 access with OAC, and test cache invalidation                                          | 06/25/2026 | 06/25/2026      |                                            |
-| 6   | - Build a CloudWatch dashboard combining EC2 and CloudFront metrics <br> - Review the week's work with mentor                                                                       | 06/26/2026 | 06/26/2026      |                                            |
+| Date | Task | Reference Material |
+| --- | --- | --- |
+| 22/06/2026 | - Review the machine learning lifecycle:<br>&emsp; + Data preparation<br>&emsp; + Model inference<br>&emsp; + Evaluation<br>&emsp; + Deployment<br>- Explore how AI/ML workloads can be integrated with AWS infrastructure. | <https://cloudjourney.awsstudygroup.com/> |
+| 23/06/2026 | - Learn text embeddings and vector representations.<br>- Study cosine similarity and semantic search.<br>- Compare lexical keyword matching with semantic retrieval. | |
+| 24/06/2026 | - Learn Retrieval-Augmented Generation.<br>- Study the main RAG flow:<br>&emsp; + Retrieve external evidence<br>&emsp; + Build context<br>&emsp; + Generate an answer<br>- Understand how retrieved evidence can improve answer grounding. | |
+| 25/06/2026 | - Study single-hop and multi-hop question answering.<br>- Examine why some questions require evidence from multiple documents.<br>- Define the initial CloudHop RAG flow: question → retrieval → evidence selection → generation → answer. | |
+| 26/06/2026 | - Study the HotpotQA benchmark.<br>- Examine bridge and comparison questions, candidate contexts, answers, and supporting facts.<br>- Select HotpotQA Distractor as the main controlled benchmark for the project. | <https://hotpotqa.github.io/> |
 
+### Week 3 Achievements
 
-### Week 3 Achievements:
-
-* Set up CloudWatch alarms and log collection for an EC2 instance.
-
-* Understood how CloudFront caches and serves content from edge locations.
-
-* Deployed a CloudFront distribution in front of an S3 bucket with Origin Access Control, so the bucket is no longer reachable directly from the public internet.
-
-* Built a basic CloudWatch dashboard to track resource health at a glance.
-
-* Understood how monitoring (CloudWatch) and content delivery (CloudFront) fit into a production-ready architecture.
-* ...
+* Understood the main stages of the machine learning lifecycle.
+* Learned how text embeddings represent semantic information.
+* Understood the difference between lexical and semantic retrieval.
+* Learned the principles of Retrieval-Augmented Generation.
+* Understood why multi-hop questions require complementary evidence from multiple documents.
+* Defined the CloudHop RAG project as a multi-hop RAG system.
+* Selected HotpotQA as the main benchmark for retrieval and answer evaluation.

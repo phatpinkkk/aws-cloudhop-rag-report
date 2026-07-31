@@ -1,37 +1,36 @@
 ---
-title: "Worklog Tuần 6"
-date: 2024-01-01
-weight: 1
+title: "Nhật ký tuần 6"
+date: 2026-07-13
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
 
+### Mục tiêu tuần 6
 
-### Mục tiêu tuần 6:
+* Chuyển các thử nghiệm retrieval từ code phụ thuộc nhiều vào notebook sang cấu trúc dự án có thể tái sử dụng và tái lập.
+* Chuẩn hóa quá trình chuẩn bị dữ liệu, cấu hình, quản lý artifact và validation.
+* Phát hiện và xử lý các vấn đề căn chỉnh giữa câu hỏi HotpotQA và supporting evidence.
+* Xây dựng benchmark artifact hợp lệ cho giai đoạn đánh giá cuối.
+* Chuẩn bị các retrieval artifact có thể lưu trữ lâu dài và đưa lên AWS.
 
-* Hiểu những giới hạn của naive RAG với câu hỏi đa bước.
-* Tìm hiểu và áp dụng các kỹ thuật RAG nâng cao: query decomposition, retrieval lặp (iterative/multi-hop), và re-ranking.
-* Cải thiện chất lượng retrieval và độ chính xác trả lời trên HotpotQA so với baseline ở tuần 5.
+### Công việc thực hiện trong tuần
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                           | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | --------------- |
-| 2   | - Tìm hiểu các kỹ thuật RAG nâng cao: <br>&emsp; + Query rewriting / decomposition <br>&emsp; + Retrieval lặp (iterative) <br>&emsp; + Re-ranking <br>&emsp; + Hybrid search (keyword + vector) | 13/07/2026   | 13/07/2026      |                  |
-| 3   | - **Thực hành:** cài đặt query decomposition để tách một câu hỏi đa bước thành các câu hỏi con                                                  | 14/07/2026   | 14/07/2026      |                  |
-| 4   | - **Thực hành:** cài đặt vòng lặp retrieval đa bước (iterative), dùng câu trả lời của câu hỏi con này để truy xuất bằng chứng cho câu hỏi con tiếp theo | 15/07/2026   | 15/07/2026      |                  |
-| 5   | - **Thực hành:** thêm bước re-ranking cho các đoạn văn bản đã truy xuất để cải thiện độ liên quan của context trước khi sinh câu trả lời         | 16/07/2026   | 16/07/2026      |                  |
-| 6   | - Đánh giá lại pipeline advanced RAG trên cùng mẫu HotpotQA đã dùng ở tuần 5 và so sánh EM/F1 với baseline naive RAG                             | 17/07/2026   | 17/07/2026      |                  |
+| Ngày | Công việc | Tài liệu tham khảo |
+| --- | --- | --- |
+| 13/07/2026 | - Refactor các phần logic dùng chung thành những source module có thể tái sử dụng.<br>- Xây dựng schema chung, retriever interface, benchmark configuration và validation utility.<br>- Giảm sự phụ thuộc vào trạng thái riêng của notebook. | |
+| 14/07/2026 | - Xây dựng cơ chế quản lý artifact cho processed document, BM25 index, embedding, mapping và manifest.<br>- Bổ sung deterministic configuration và artifact hashing.<br>- Tổ chức cấu hình dự án bằng các file cấu hình có thể tái sử dụng. | |
+| 15/07/2026 | - Chạy quá trình chuẩn bị dữ liệu ở quy mô lớn hơn.<br>- Phát hiện những trường hợp supporting fact không xuất hiện trong candidate evidence.<br>- Kiểm tra lại mối liên hệ giữa question, context và supporting title.<br>- Tăng cường validation thay vì bỏ qua các mẫu dữ liệu không hợp lệ. | |
+| 16/07/2026 | - Kiểm tra artifact đánh giá 500 câu hỏi đầu tiên.<br>- Phát hiện artifact v001 không phù hợp để dùng cho retrieval evaluation cuối cùng vì corpus không phải lúc nào cũng chứa đầy đủ gold supporting title cần thiết.<br>- Quyết định xây dựng lại benchmark thay vì sử dụng các kết quả đánh giá không hợp lệ. | |
+| 17/07/2026 | - Xây dựng lại benchmark bằng HotpotQA Distractor.<br>- Bổ sung bước kiểm tra gold-title coverage rõ ràng.<br>- Sinh parent document, child document, child-to-parent mapping, BM25 artifact, BGE-M3 vector, manifest và các artifact dùng để import vào S3 Vectors.<br>- Kiểm tra và xác nhận benchmark v002 sau khi sửa. | |
 
+### Kết quả đạt được
 
-### Kết quả đạt được tuần 6:
-
-* Hiểu vì sao naive RAG gặp khó khăn với câu hỏi đa bước và các chiến lược retrieval nâng cao giải quyết vấn đề đó như thế nào.
-
-* Cài đặt được query decomposition để tách câu hỏi đa bước thành các câu hỏi con có thể truy xuất riêng.
-
-* Xây dựng được vòng lặp retrieval đa bước, nối tiếp bằng chứng qua nhiều tài liệu.
-
-* Thêm bước re-ranking giúp cải thiện độ liên quan của context được truy xuất.
-
-* Đo được mức cải thiện độ chính xác rõ rệt (EM/F1) so với baseline naive RAG ở tuần 5 trên HotpotQA.
-* ...
+* Refactor dự án thành các module có thể tái sử dụng cho data preparation, retrieval, artifact management và evaluation.
+* Chuẩn hóa cấu hình và cách lưu trữ artifact lâu dài.
+* Phát hiện và xử lý một vấn đề quan trọng liên quan đến sự căn chỉnh của supporting evidence.
+* Không sử dụng benchmark v001 sau khi xác định kết quả từ artifact này có thể gây hiểu sai về chất lượng retrieval.
+* Xây dựng artifact **HotpotQA Distractor v002** đã được hiệu chỉnh.
+* Xác nhận corpus cuối gồm **500 câu hỏi validation, 4.937 parent document và 8.279 BGE-M3 child vector**.
+* Kiểm tra và xác nhận benchmark mới **không thiếu gold supporting title**.
+* Chuẩn bị đầy đủ artifact để đưa lên Amazon S3 và Amazon S3 Vectors ở giai đoạn triển khai.

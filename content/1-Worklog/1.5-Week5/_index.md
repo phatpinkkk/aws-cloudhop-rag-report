@@ -1,37 +1,35 @@
 ---
 title: "Week 5 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-07-06
+weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
 
+### Week 5 Objectives
 
-### Week 5 Objectives:
+* Improve retrieval quality beyond the initial TF-IDF and MiniLM baselines.
+* Introduce stronger lexical and semantic retrieval methods.
+* Combine BM25 and BGE-M3 in a hybrid retrieval pipeline.
+* Design parent-child document representations for efficient retrieval and useful context.
+* Add query decomposition, adaptive multi-hop retrieval, and cross-encoder reranking.
 
-* Understand what Retrieval-Augmented Generation (RAG) is and why it helps reduce hallucination.
-* Build a naive (single-pass) RAG pipeline: chunk → embed → retrieve → generate.
-* Run the naive pipeline on a sample of HotpotQA questions and measure a baseline accuracy.
+### Tasks to be carried out this week
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                       | Start Date | Completion Date | Reference Material                                              |
-| --- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ----------------------------------------------------------------- |
-| 2   | - Learn RAG fundamentals: retrieval + generation, grounding LLM answers in retrieved context                                                  | 07/06/2026 | 07/06/2026      |                                                                    |
-| 3   | - Learn the naive RAG pipeline: <br>&emsp; + Document chunking strategies <br>&emsp; + Embedding the corpus <br>&emsp; + Storing vectors <br>&emsp; + Top-k similarity search | 07/07/2026 | 07/07/2026      |                                                                     |
-| 4   | - **Practice:** chunk and embed a subset of HotpotQA context paragraphs, store the embeddings in a vector index                               | 07/08/2026 | 07/08/2026      |                                                                     |
-| 5   | - **Practice:** implement single-pass retrieval + prompt construction, generate answers for sample questions                                  | 07/09/2026 | 07/09/2026      |                                                                     |
-| 6   | - Evaluate the naive RAG pipeline on a small HotpotQA sample (Exact Match / F1) and note failure cases on multi-hop questions                 | 07/10/2026 | 07/10/2026      |                                                                     |
+| Date | Task | Reference Material |
+| --- | --- | --- |
+| 06/07/2026 | - Review baseline retrieval limitations.<br>- Design an advanced retrieval benchmark with a common retriever interface.<br>- Study BM25, stronger dense retrieval, hybrid retrieval, reranking, and multi-hop retrieval strategies. | |
+| 07/07/2026 | - Implement BM25 lexical retrieval.<br>- Introduce **BAAI/bge-m3** as the main dense embedding model.<br>- Compare the complementary roles of keyword matching and semantic similarity. | |
+| 08/07/2026 | - Design parent-child document representation.<br>- Divide source documents into smaller child units for dense retrieval.<br>- Preserve parent documents for richer context.<br>- Build child-to-parent mappings. | |
+| 09/07/2026 | - Combine BM25 and BGE-M3 retrieval into a hybrid candidate pipeline.<br>- Implement query decomposition for complex questions.<br>- Add adaptive retrieval so additional hops can be triggered when further evidence is needed. | |
+| 10/07/2026 | - Add `cross-encoder/ms-marco-MiniLM-L-6-v2` reranking.<br>- Define the complete retrieval flow: decomposition → BM25 + BGE-M3 → adaptive retrieval → candidate aggregation → reranking → selected evidence.<br>- Review retrieved evidence and refine configuration parameters. | |
 
+### Week 5 Achievements
 
-### Week 5 Achievements:
-
-* Understood the core idea of RAG and why grounding generation in retrieved evidence reduces hallucination.
-
-* Built a working naive RAG pipeline: chunking, embedding, vector similarity search, and prompt-based generation.
-
-* Ran the pipeline end-to-end on a sample of HotpotQA questions.
-
-* Measured a baseline accuracy (EM/F1) and observed that naive, single-pass retrieval frequently fails on multi-hop questions that need evidence from more than one document.
-
-* Identified this gap as the motivation for exploring advanced RAG techniques next week.
-* ...
+* Implemented BM25 lexical retrieval.
+* Adopted BGE-M3 as the main dense embedding model.
+* Built a hybrid lexical-semantic retrieval pipeline.
+* Implemented parent-child document indexing.
+* Added query decomposition and adaptive multi-hop retrieval.
+* Added cross-encoder reranking to improve the ordering of retrieved evidence.
+* Established the main retrieval architecture used by CloudHop RAG.

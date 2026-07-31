@@ -1,37 +1,35 @@
 ---
 title: "Week 4 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-06-29
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
 
+### Week 4 Objectives
 
-### Week 4 Objectives:
+* Study the HotpotQA dataset structure in detail.
+* Prepare reusable data structures for retrieval experiments.
+* Build initial lexical and dense retrieval baselines.
+* Evaluate retrieval quality independently from answer generation.
+* Identify limitations of single-pass retrieval on multi-hop questions.
 
-* Get an overview of Amazon SageMaker and its role in the machine learning lifecycle.
-* Understand text embeddings and vector similarity — the foundation of retrieval used later in RAG.
-* Run a first hands-on notebook and inference example on SageMaker.
+### Tasks to be carried out this week
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                             | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Learn SageMaker overview: <br>&emsp; + Studio / notebook instances <br>&emsp; + Training jobs & model registry <br>&emsp; + Endpoints            | 06/29/2026 | 06/29/2026      |                                            |
-| 3   | - **Practice:** launch a SageMaker notebook instance, load a small pretrained model, and run inference                                            | 06/30/2026 | 06/30/2026      |                                            |
-| 4   | - Learn text embeddings: <br>&emsp; + What an embedding is <br>&emsp; + Cosine similarity <br>&emsp; + Why embeddings enable semantic search       | 07/01/2026 | 07/01/2026      |                                            |
-| 5   | - **Practice:** generate embeddings for a small set of text passages inside a SageMaker notebook and compute similarity scores between them        | 07/02/2026 | 07/02/2026      |                                            |
-| 6   | - Explore the HotpotQA dataset structure (questions, supporting facts, context paragraphs) to prepare for the RAG project                          | 07/03/2026 | 07/03/2026      | <https://hotpotqa.github.io/>             |
+| Date | Task | Reference Material |
+| --- | --- | --- |
+| 29/06/2026 | - Inspect the HotpotQA dataset structure.<br>- Analyze question IDs, questions, answers, supporting facts, contexts, and question types.<br>- Identify the information required for retrieval evaluation. | <https://hotpotqa.github.io/> |
+| 30/06/2026 | - Design the initial dataset preparation workflow.<br>- Convert HotpotQA contexts into retrievable evidence units.<br>- Align question metadata with candidate evidence and supporting facts.<br>- Save reusable dataset inspection artifacts. | |
+| 01/07/2026 | - Implement a lexical retrieval baseline using TF-IDF.<br>- Retrieve evidence at multiple top-k values.<br>- Define retrieval evaluation based on whether annotated supporting evidence is recovered. | |
+| 02/07/2026 | - Implement a dense retrieval baseline using Sentence Transformers MiniLM.<br>- Generate vector representations for retrieval candidates.<br>- Compare semantic retrieval behavior with the TF-IDF baseline. | |
+| 03/07/2026 | - Evaluate TF-IDF and MiniLM retrieval across different top-k settings.<br>- Inspect retrieval successes and failure cases.<br>- Analyze why single-pass retrieval can miss evidence required for multi-hop questions.<br>- Keep answer generation outside the benchmark to isolate retrieval quality. | |
 
+### Week 4 Achievements
 
-### Week 4 Achievements:
-
-* Understood the role of SageMaker in the ML lifecycle (build, train, deploy).
-
-* Deployed and queried a model from a SageMaker notebook instance.
-
-* Understood how text embeddings represent semantic meaning and how cosine similarity is used to compare them.
-
-* Computed embeddings and similarity scores for a small text sample as a warm-up for retrieval.
-
-* Explored the structure of the HotpotQA dataset and identified what "multi-hop" means in practice.
-* ...
+* Completed the initial HotpotQA inspection and preparation workflow.
+* Built reusable question, context, and supporting-evidence structures.
+* Implemented a TF-IDF lexical retrieval baseline.
+* Implemented a MiniLM dense retrieval baseline.
+* Evaluated multiple top-k retrieval settings.
+* Established a reproducible retrieval-only baseline before adding generation.
+* Identified the need for stronger hybrid and multi-hop retrieval methods.

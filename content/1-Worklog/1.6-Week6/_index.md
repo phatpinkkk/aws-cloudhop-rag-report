@@ -1,37 +1,36 @@
 ---
 title: "Week 6 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-07-13
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
 
+### Week 6 Objectives
 
-### Week 6 Objectives:
+* Move the retrieval experiments from notebook-only code into a reusable and reproducible project structure.
+* Standardize dataset preparation, configuration, artifact handling, and validation.
+* Detect and correct alignment problems between HotpotQA questions and supporting evidence.
+* Build a valid final benchmark artifact.
+* Prepare persistent retrieval artifacts that can later be transferred to AWS.
 
-* Understand the limitations of naive RAG on multi-hop questions.
-* Learn and apply advanced RAG techniques: query decomposition, iterative/multi-hop retrieval, and re-ranking.
-* Improve retrieval quality and answer accuracy on HotpotQA compared to the Week 5 baseline.
+### Tasks to be carried out this week
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                 | Start Date | Completion Date | Reference Material |
-| --- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ------------------- |
-| 2   | - Learn advanced RAG techniques: <br>&emsp; + Query rewriting / decomposition <br>&emsp; + Iterative retrieval <br>&emsp; + Re-ranking <br>&emsp; + Hybrid (keyword + vector) search | 07/13/2026 | 07/13/2026      |                      |
-| 3   | - **Practice:** implement query decomposition to break a multi-hop question into sub-questions                                                     | 07/14/2026 | 07/14/2026      |                      |
-| 4   | - **Practice:** implement an iterative/multi-hop retrieval loop that uses the answer to one sub-question to retrieve evidence for the next          | 07/15/2026 | 07/15/2026      |                      |
-| 5   | - **Practice:** add a re-ranking step on top of retrieved passages to improve context relevance before generation                                   | 07/16/2026 | 07/16/2026      |                      |
-| 6   | - Re-evaluate the advanced RAG pipeline on the same HotpotQA sample used in Week 5 and compare EM/F1 against the naive baseline                    | 07/17/2026 | 07/17/2026      |                      |
+| Date | Task | Reference Material |
+| --- | --- | --- |
+| 13/07/2026 | - Refactor shared experimental logic into reusable source modules.<br>- Define common schemas, retriever interfaces, benchmark configuration, and validation utilities.<br>- Reduce dependence on notebook-specific state. | |
+| 14/07/2026 | - Build reusable artifact management for processed documents, BM25 indexes, embeddings, mappings, and manifests.<br>- Add deterministic configuration and artifact hashing.<br>- Organize project settings through reusable configuration files. | |
+| 15/07/2026 | - Run larger-scale data preparation.<br>- Detect cases where supporting facts were missing from candidate evidence.<br>- Investigate the alignment between questions, contexts, and supporting titles.<br>- Improve validation checks rather than silently ignoring invalid examples. | |
+| 16/07/2026 | - Investigate the first 500-question evaluation artifact.<br>- Identify that the v001 artifact was unsuitable for final retrieval evaluation because the evaluation corpus did not consistently contain the required gold supporting titles.<br>- Decide to rebuild the benchmark instead of reporting invalid results. | |
+| 17/07/2026 | - Rebuild the benchmark using HotpotQA Distractor.<br>- Add explicit gold-title coverage validation.<br>- Generate parent documents, child documents, child-to-parent mappings, BM25 artifacts, BGE-M3 vectors, manifests, and S3 Vectors import artifacts.<br>- Validate the corrected v002 benchmark. | |
 
+### Week 6 Achievements
 
-### Week 6 Achievements:
-
-* Understood why naive RAG struggles with multi-hop questions and how advanced retrieval strategies address that gap.
-
-* Implemented query decomposition to break multi-hop questions into retrievable sub-questions.
-
-* Built an iterative, multi-hop retrieval loop that chains evidence across documents.
-
-* Added a re-ranking step that improved the relevance of retrieved context.
-
-* Measured a clear accuracy improvement (EM/F1) over the Week 5 naive RAG baseline on HotpotQA.
-* ...
+* Refactored the project into reusable modules for data preparation, retrieval, artifacts, and evaluation.
+* Standardized configuration and persistent artifact handling.
+* Detected and corrected an important supporting-evidence alignment problem.
+* Rejected the invalid v001 benchmark instead of using misleading evaluation results.
+* Built the corrected **HotpotQA Distractor v002** artifact.
+* Validated a final corpus containing **500 validation questions, 4,937 parent documents, and 8,279 BGE-M3 child vectors**.
+* Confirmed that the corrected benchmark contained **no missing gold supporting titles**.
+* Prepared reusable artifacts for later deployment to Amazon S3 and Amazon S3 Vectors.

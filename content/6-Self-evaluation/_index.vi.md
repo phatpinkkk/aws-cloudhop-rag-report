@@ -1,53 +1,67 @@
 ---
 title: "Tự đánh giá"
-date: 2024-01-01
+date: 2026-07-31
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
 
+Trong kỳ thực tập tại **AWS First Cloud AI Journey**, điều tôi thấy có giá trị nhất là được tham gia vào một dự án AI tương đối hoàn chỉnh, thay vì chỉ dừng lại ở những bài thực hành hoặc thử nghiệm riêng lẻ. Với **AWS CloudHop RAG**, phần công việc tôi phụ trách nhiều nhất là retrieval và evaluation, từ chuẩn bị benchmark, xây dựng lexical retrieval và dense retrieval, phát triển multi-hop retrieval, xử lý lỗi cho đến phân tích chất lượng và hiệu năng của hệ thống. Qua quá trình này, tôi tự tin hơn khi gặp một vấn đề kỹ thuật mới, biết cách kiểm tra lại kết quả thay vì vội tin vào một con số, đồng thời hiểu rõ hơn một pipeline AI cần kết nối với các thành phần khác như thế nào để trở thành một ứng dụng cloud hoàn chỉnh.
 
-Trong suốt thời gian thực tập tại **FCAJ** từ **10/6/2026** đến **30/7/2026**, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế.  
-Tôi đã tham gia **triển khai RAG để giải quyết các câu hỏi suy luận đa bước (multi-hop reasoning) với bộ dữ liệu HotpotQA**, qua đó cải thiện kỹ năng **sử dụng dịch vụ AWS, thiết kế hệ thống RAG, viết tài liệu kỹ thuật, triển khai trang web tĩnh với Hugo và GitHub Actions, cùng khả năng giải quyết vấn đề/debug**.  
+Nhìn chung, tôi đánh giá mình đã hoàn thành khá tốt những phần việc được giao, đặc biệt là các nhiệm vụ liên quan trực tiếp đến retrieval và đánh giá hệ thống. Điểm mạnh của tôi là khả năng tự học nhanh, kiên trì tìm nguyên nhân khi kết quả có vấn đề và khá cẩn thận khi làm việc với dữ liệu cũng như các chỉ số đánh giá. Tuy nhiên, tôi không cho rằng quá trình làm việc của mình đã tối ưu. Có những thử nghiệm mất nhiều thời gian hơn cần thiết, và đôi lúc tôi dành quá lâu để tự tìm hiểu một vấn đề trước khi trao đổi với các thành viên khác. Tôi cũng chưa có nhiều thời gian trực tiếp thao tác với một số phần của quá trình triển khai AWS như mình mong muốn.
 
-Về tác phong, tôi luôn cố gắng hoàn thành tốt nhiệm vụ, tuân thủ nội quy, và tích cực trao đổi với đồng nghiệp để nâng cao hiệu quả công việc.
+### Tự đánh giá
 
-Để phản ánh một cách khách quan quá trình thực tập, tôi xin tự đánh giá bản thân dựa trên các tiêu chí dưới đây:
-
-
-| STT | Tiêu chí                                              | Mô tả                                                                                                                                                                              | Tốt | Khá | Trung bình |
-| --- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- | --- | ---------- |
-| 1   | **Kiến thức và kỹ năng chuyên môn (AWS & RAG)**         | Nắm vững các dịch vụ AWS cốt lõi (EC2, S3, IAM, VPC endpoints) được áp dụng trong workshop kết nối hybrid, đồng thời triển khai thực tế một pipeline RAG để giải quyết câu hỏi suy luận đa bước trên bộ dữ liệu HotpotQA | ✅   | ☐   | ☐          |
-| 2   | **Khả năng học hỏi (dịch vụ & công cụ AWS mới)**        | Tiếp thu nhanh các dịch vụ AWS mới (S3 Metadata/Annotations, Cost Categories, Glue, Amplify, Cognito) và framework Hugo chỉ trong vài tuần, đủ hiểu rõ để viết thành hai bài blog kỹ thuật | ✅   | ☐   | ☐          |
-| 3   | **Chủ động**                                            | Chủ động thử nghiệm các chiến lược truy xuất (retrieval) khác nhau cho pipeline RAG/HotpotQA thay vì chỉ làm theo yêu cầu tối thiểu, tự phát hiện và khắc phục các lỗi triển khai GitHub Pages (baseURL, canonifyURLs, đường dẫn ảnh) mà không cần ai nhắc | ✅   | ☐   | ☐          |
-| 4   | **Tinh thần trách nhiệm**                               | Hoàn thành worklog hằng tuần, các bài lab workshop và bài blog đúng hạn, đồng thời luôn cập nhật danh sách công việc của dự án RAG | ✅   | ☐   | ☐          |
-| 5   | **Kỷ luật**                                             | Nhìn chung tuân thủ nhịp độ báo cáo hằng tuần, nhưng một vài worklog và bài blog vẫn hoàn thành sát hạn thay vì được dàn đều | ☐   | ✅   | ☐          |
-| 6   | **Tính cầu tiến**                                       | Tiếp thu phản hồi từ mentor khá nhanh, chẳng hạn điều chỉnh pipeline RAG dựa trên kết quả đánh giá và sửa các lỗi build/theme của Hugo sau khi được góp ý | ✅   | ☐   | ☐          |
-| 7   | **Giao tiếp**                                           | Trình bày công việc kỹ thuật khá tốt bằng văn bản (blog, proposal, worklog), nhưng vẫn cần súc tích và có cấu trúc hơn khi báo cáo tiến độ trực tiếp với mentor | ☐   | ✅   | ☐          |
-| 8   | **Hợp tác nhóm**                                        | Phối hợp tốt với mentor và các bạn thực tập sinh FCAJ trong workshop kết nối hybrid S3 và các buổi review blog của study group | ✅   | ☐   | ☐          |
-| 9   | **Ứng xử chuyên nghiệp**                                | Tuân thủ nội quy thực tập, cư xử lịch sự với mentor và cộng đồng AWS Study Group khi chia sẻ blog | ✅   | ☐   | ☐          |
-| 10  | **Tư duy giải quyết vấn đề**                            | Tự mình debug và xử lý các vấn đề kỹ thuật cụ thể, như file ảnh avatar bị gắn sai định dạng, lỗi build GitHub Actions, và các lỗi suy luận trong pipeline RAG | ✅   | ☐   | ☐          |
-| 11  | **Đóng góp vào dự án/tổ chức (dự án RAG & nội dung blog)** | Đóng góp một pipeline RAG hoạt động được cho bài toán hỏi-đáp đa bước trên HotpotQA, nội dung blog chất lượng, và bài viết workshop mà team có thể dùng làm tài liệu tham khảo | ✅   | ☐   | ☐          |
-| 12  | **Tổng thể**                                            | Hoàn thành các mục tiêu thực tập, tạo ra sản phẩm kỹ thuật cụ thể (triển khai RAG, blog, proposal, workshop), và tiến bộ đều ở hầu hết các tiêu chí | ✅   | ☐   | ☐          |
-
-### Cần cải thiện
-
-* Nâng cao tính kỷ luật bằng cách dàn đều worklog, bài lab workshop và deadline blog thay vì hoàn thành sát hạn
-* Tiếp tục cải thiện kỹ năng giao tiếp — trình bày công việc kỹ thuật súc tích hơn, cả khi viết lẫn khi trao đổi tiến độ trực tiếp với mentor
+| STT | Tiêu chí | Tự đánh giá | Tốt | Khá | Trung bình |
+| --- | --- | --- | :---: | :---: | :---: |
+| 1 | **Kiến thức chuyên môn và kỹ năng kỹ thuật** | Tôi hiểu sâu hơn về RAG, lexical retrieval, semantic retrieval, embedding, multi-hop retrieval, evaluation và cách những thành phần này phối hợp trong một ứng dụng triển khai trên AWS. | ✅ | ☐ | ☐ |
+| 2 | **Khả năng học hỏi** | Tôi có thể tiếp cận tương đối nhanh các phương pháp retrieval, kỹ thuật đánh giá và kiến thức AWS mới, sau đó áp dụng trực tiếp vào dự án. | ✅ | ☐ | ☐ |
+| 3 | **Tính chủ động** | Tôi chủ động tìm hiểu thêm các hướng retrieval và evaluation ngoài baseline ban đầu, đồng thời tự kiểm tra những kết quả bất thường thay vì chỉ tiếp tục chạy thử nghiệm. | ✅ | ☐ | ☐ |
+| 4 | **Kỷ luật và quản lý thời gian** | Tôi hoàn thành các đầu việc chính, nhưng một số thử nghiệm và benchmark vẫn có thể được lên kế hoạch, sắp xếp ưu tiên và giới hạn phạm vi tốt hơn. | ☐ | ✅ | ☐ |
+| 5 | **Giao tiếp** | Tôi thường xuyên chia sẻ kết quả và phát hiện kỹ thuật với nhóm, nhưng cần cải thiện việc báo sớm những vướng mắc và tiến độ trung gian thay vì đợi đến khi đã tự tìm hiểu khá lâu. | ☐ | ✅ | ☐ |
+| 6 | **Làm việc nhóm** | Tôi phối hợp tốt với các thành viên phụ trách retrieval, backend, frontend và triển khai AWS, đồng thời tham gia kiểm tra hệ thống sau khi các thành phần được tích hợp. | ✅ | ☐ | ☐ |
+| 7 | **Giải quyết vấn đề** | Khi retrieval hoặc evaluation cho kết quả bất thường, tôi thường lần theo từng bước của pipeline, kiểm tra dữ liệu, candidate, selected evidence và thời gian xử lý thay vì chỉ nhìn vào metric cuối cùng. | ✅ | ☐ | ☐ |
+| 8 | **Mức độ đóng góp cho dự án** | Phần đóng góp chính của tôi nằm ở chuẩn bị benchmark, phát triển retrieval, evaluation, debugging, phân tích kết quả và hỗ trợ kiểm tra hệ thống cuối cùng. | ✅ | ☐ | ☐ |
+| 9 | **Đánh giá chung** | Tôi hoàn thành tốt phần trách nhiệm chính và đóng góp ổn định cho dự án, đồng thời nhận ra mình vẫn cần cải thiện thêm về kinh nghiệm triển khai AWS, giao tiếp trong quá trình xử lý vấn đề và hiệu quả khi tổ chức thử nghiệm. | ✅ | ☐ | ☐ |
 
 ### Đóng góp cá nhân
 
-**Mức độ tự làm**
+Trong CloudHop RAG, phần tôi phụ trách chính là **retrieval và evaluation**. Tôi tham gia chuẩn bị và kiểm tra benchmark HotpotQA, xây dựng và so sánh các phương pháp retrieval, cải thiện pipeline multi-hop và phân tích cả chất lượng truy xuất lẫn thời gian xử lý.
 
-* Không chỉ copy mẫu: Toàn bộ pipeline RAG (chunking, indexing, retrieval, hop planning, generation) do tôi tự thiết kế và code, không dùng lại nguyên vẹn một RAG tutorial/template có sẵn.
-* Có tùy biến:
-  * **Thêm feature:** Tự triển khai Query Decomposition (phân rã câu hỏi đa chặng bằng LLM) và Adaptive Hop Planner (lập kế hoạch hop tiếp theo một cách động dựa trên bằng chứng vừa truy hồi được) — cả hai đều vượt ngoài một pipeline RAG "naive" chỉ retrieve một lần rồi generate một lần.
-  * **Thêm service:** Tích hợp Amazon S3 Vectors làm vector store cho production (thay thế ChromaDB cục bộ), cùng một FastAPI service layer với endpoint health-check/warmup riêng.
-  * **Data khác:** Dùng một validation slice của HotpotQA tự xử lý (tự chunking parent/child, tự xây chỉ mục BM25 và vector), không dùng dataset đã tiền xử lý sẵn.
-  * **Cách test khác:** Tự xây bộ eval đo Exact Match/F1 đúng theo chuẩn chấm điểm của HotpotQA, thay vì chỉ chạy demo trên vài câu hỏi mẫu.
+Ở giai đoạn cuối, tôi cũng tham gia kiểm tra lại hệ thống sau khi pipeline được tích hợp vào ứng dụng AWS, đặc biệt là xem các bằng chứng được truy xuất và câu trả lời được sinh ra có còn hợp lý hay không. Dù không trực tiếp phụ trách toàn bộ quá trình triển khai, công việc này buộc tôi phải hiểu cách phần retrieval của mình tương tác với backend, API, vector storage và các thành phần khác trong hệ thống.
 
-**Reflection ngắn**
+Một điều tôi học được khá rõ từ quá trình evaluation là không nên nhìn một metric riêng lẻ rồi kết luận ngay hệ thống tốt hay chưa. Khi có kết quả bất thường, tôi phải quay lại kiểm tra dữ liệu đầu vào, candidate pool, bằng chứng sau reranking và cả câu trả lời cuối cùng. Cách làm này giúp tôi cẩn thận hơn khi đọc và giải thích kết quả thử nghiệm.
 
-* **Khó khăn gặp phải:** Hạn chế lớn nhất nằm ở hạ tầng — vì chỉ dùng được AWS Free Tier (không có GPU), bước cross-encoder reranking (cần chạy một mô hình transformer để tái xếp hạng các candidate đã truy hồi) không thể chạy hiệu quả trong môi trường production, nên phải tắt reranker khi deploy thực tế.
-* **Cách giải quyết:** Tôi thiết kế hệ thống theo hướng graceful degradation — khi reranker bị tắt, pipeline vẫn hoạt động đúng bằng cách giữ nguyên thứ hạng từ hybrid retrieval (BM25 + Vector qua Reciprocal Rank Fusion) thay vì làm sập hệ thống hoặc bắt buộc phải có GPU.
-* **Hướng phát triển trong tương lai:** Nếu có hạ tầng GPU (ví dụ EC2 instance có GPU hoặc một dịch vụ inference managed), tôi sẽ bật lại cross-encoder reranking để cải thiện độ chính xác của ngữ cảnh đưa vào bước sinh câu trả lời, đặc biệt với các câu hỏi multi-hop có nhiều candidate gây nhiễu.
+### Khó khăn và cách xử lý
+
+Một trong những khó khăn lớn nhất tôi gặp phải là cân bằng giữa **chất lượng retrieval và giới hạn thực tế của môi trường triển khai**.
+
+Cấu hình dùng để đánh giá chất lượng có thể sử dụng nhiều candidate hơn, nhiều retrieval hop hơn, thêm reranking và nhiều lần gọi mô hình hơn. Những thành phần này giúp hệ thống tìm và sắp xếp bằng chứng tốt hơn, nhưng đổi lại latency và nhu cầu tài nguyên cũng tăng đáng kể. Trong khi đó, môi trường AWS mà nhóm sử dụng cần đáp ứng những giới hạn thực tế hơn về CPU, thời gian phản hồi và chi phí.
+
+Thay vì cố ép một cấu hình duy nhất phải phù hợp cho cả hai mục đích, nhóm giữ một cấu hình mạnh hơn để đánh giá có kiểm soát, còn ứng dụng triển khai sử dụng cấu hình gọn hơn với ít candidate, ít bước retrieval và ít xử lý tốn tài nguyên hơn.
+
+Đây là một bài học quan trọng đối với tôi vì nó giúp tôi nhận ra rằng trong kỹ thuật hiếm khi tồn tại một cấu hình đơn giản là "tốt nhất" trong mọi trường hợp. Khi thử nghiệm, ưu tiên có thể là chất lượng retrieval; nhưng khi đưa hệ thống vào sử dụng thực tế, còn phải tính đến latency, chi phí, tài nguyên sẵn có và độ ổn định. Việc tìm được điểm cân bằng phù hợp giữa những yếu tố này cũng là một phần quan trọng của công việc kỹ sư.
+
+### Những điểm cần cải thiện
+
+Điều đầu tiên tôi muốn cải thiện là **kinh nghiệm triển khai AWS và làm việc trực tiếp với hạ tầng cloud**. Đến cuối kỳ thực tập, tôi đã hiểu kiến trúc tổng thể của hệ thống rõ hơn nhiều so với lúc bắt đầu, nhưng công việc của tôi vẫn tập trung chủ yếu vào retrieval và evaluation. Trong các dự án sau, tôi muốn trực tiếp phụ trách nhiều hơn những phần như triển khai backend, networking, phân quyền, tích hợp API và xử lý sự cố trong môi trường production.
+
+Tôi cũng muốn cải thiện cách **quản lý thời gian dành cho thử nghiệm**. Khi phát triển retrieval, có rất nhiều phương pháp và cấu hình có thể thử. Một số thử nghiệm mang lại thông tin hữu ích, nhưng cũng có những thử nghiệm không ảnh hưởng nhiều đến hướng cuối cùng của dự án. Sau trải nghiệm này, tôi muốn tập thói quen đặt ra giả thuyết rõ hơn trước khi chạy thử nghiệm và ưu tiên những thử nghiệm có khả năng trả lời một câu hỏi kỹ thuật thực sự quan trọng.
+
+Một điểm khác là **giao tiếp trong quá trình giải quyết vấn đề**. Tôi thường có xu hướng tự tìm hiểu khá sâu trước khi đưa vấn đề ra trao đổi. Điều này giúp tôi rèn khả năng làm việc độc lập, nhưng nếu vấn đề có ảnh hưởng đến phần việc của những thành viên khác thì việc chia sẻ sớm hơn sẽ giúp cả nhóm phối hợp hiệu quả hơn và tránh mất thời gian trùng lặp.
+
+### Làm việc nhóm
+
+Quá trình làm việc với nhóm nhìn chung diễn ra khá thuận lợi vì sau một thời gian, mỗi thành viên dần tập trung vào những phần phù hợp với thế mạnh của mình. Tôi dành nhiều thời gian hơn cho retrieval, chuẩn bị benchmark và evaluation, trong khi các thành viên khác tham gia sâu hơn vào backend, frontend hoặc những phần cụ thể của quá trình triển khai AWS.
+
+Dù có sự phân chia như vậy, các phần việc vẫn liên quan chặt chẽ với nhau. Tôi thường xuyên chia sẻ kết quả retrieval và evaluation với nhóm, đồng thời hỗ trợ kiểm tra xem ứng dụng cuối cùng có trả về đúng bằng chứng và câu trả lời như mong đợi hay không.
+
+Nhìn lại, tôi nghĩ mình có thể chủ động tham gia trực tiếp nhiều hơn vào những phần nằm ngoài trách nhiệm chính. Việc chia nhỏ công việc giúp nhóm tiến nhanh hơn, nhưng tôi cũng nhận ra rằng chuyên môn hóa không có nghĩa là chỉ hiểu phần của mình. Với một hệ thống AI hoàn chỉnh, mỗi thành viên vẫn cần có đủ cái nhìn tổng thể để hiểu những thay đổi ở một thành phần có thể ảnh hưởng đến các phần còn lại như thế nào.
+
+### Điều rút ra sau kỳ thực tập
+
+Bài học lớn nhất tôi nhận được từ kỳ thực tập là **làm tốt phần AI mới chỉ là một phần của công việc AI Engineer**.
+
+Retrieval và evaluation là những phần tôi cảm thấy tự tin nhất, nhưng để CloudHop RAG thực sự hoạt động còn cần dữ liệu được chuẩn bị đúng, backend ổn định, API kết nối được, hạ tầng AWS được cấu hình phù hợp, quyền truy cập được quản lý an toàn và các thành phần phải phối hợp với nhau trong giới hạn latency và tài nguyên thực tế. Một phương pháp cho kết quả tốt trong thử nghiệm chưa chắc đã là giải pháp tốt khi đưa vào vận hành.
+
+Kỳ thực tập giúp tôi tự tin hơn khi xử lý các vấn đề kỹ thuật mà trước đó mình chưa quen, nhưng đồng thời cũng cho tôi thấy khá rõ những điểm mình còn thiếu. Trong thời gian tới, tôi muốn tiếp tục phát triển nền tảng machine learning và kỹ năng evaluation, đồng thời nâng cao khả năng triển khai để có thể tham gia trọn vẹn hơn vào quá trình đưa một ý tưởng AI từ giai đoạn thử nghiệm thành một ứng dụng hoàn chỉnh, ổn định và thực sự sử dụng được.

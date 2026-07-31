@@ -1,37 +1,35 @@
 ---
-title: "Worklog Tuần 5"
-date: 2024-01-01
-weight: 1
+title: "Nhật ký tuần 5"
+date: 2026-07-06
+weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
 
+### Mục tiêu tuần 5
 
-### Mục tiêu tuần 5:
+* Cải thiện chất lượng retrieval so với các baseline TF-IDF và MiniLM ban đầu.
+* Áp dụng các phương pháp lexical và semantic retrieval mạnh hơn.
+* Kết hợp BM25 và BGE-M3 thành một hybrid retrieval pipeline.
+* Thiết kế cách biểu diễn tài liệu theo mô hình parent-child để vừa hỗ trợ retrieval hiệu quả, vừa giữ đủ context cho các bước phía sau.
+* Bổ sung query decomposition, adaptive multi-hop retrieval và cross-encoder reranking.
 
-* Hiểu Retrieval-Augmented Generation (RAG) là gì và vì sao nó giúp giảm hallucination.
-* Xây dựng một pipeline RAG đơn giản (naive, một lượt): chunk → embed → retrieve → generate.
-* Chạy pipeline naive trên một mẫu câu hỏi HotpotQA và đo độ chính xác baseline.
+### Công việc thực hiện trong tuần
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                    | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                                                    |
-| --- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ------------------------------------------------------------------ |
-| 2   | - Tìm hiểu nền tảng RAG: retrieval + generation, cách "ground" câu trả lời của LLM vào context đã truy xuất                                | 06/07/2026   | 06/07/2026      |                                                                    |
-| 3   | - Tìm hiểu pipeline naive RAG: <br>&emsp; + Chiến lược chunking tài liệu <br>&emsp; + Embed corpus <br>&emsp; + Lưu vector <br>&emsp; + Top-k similarity search | 07/07/2026   | 07/07/2026      |                                                                      |
-| 4   | - **Thực hành:** chunk và embed một tập nhỏ đoạn context của HotpotQA, lưu embeddings vào vector index                                     | 08/07/2026   | 08/07/2026      |                                                                      |
-| 5   | - **Thực hành:** cài đặt retrieval một lượt + dựng prompt, sinh câu trả lời cho các câu hỏi mẫu                                            | 09/07/2026   | 09/07/2026      |                                                                      |
-| 6   | - Đánh giá pipeline naive RAG trên một mẫu nhỏ HotpotQA (Exact Match / F1) và ghi nhận các trường hợp lỗi với câu hỏi đa bước               | 10/07/2026   | 10/07/2026      |                                                                      |
+| Ngày | Công việc | Tài liệu tham khảo |
+| --- | --- | --- |
+| 06/07/2026 | - Xem lại những hạn chế của các baseline retrieval.<br>- Thiết kế advanced retrieval benchmark với giao diện retriever thống nhất.<br>- Tìm hiểu BM25, dense retrieval mạnh hơn, hybrid retrieval, reranking và các chiến lược multi-hop retrieval. | |
+| 07/07/2026 | - Xây dựng BM25 lexical retrieval.<br>- Đưa **BAAI/bge-m3** vào làm dense embedding model chính.<br>- Phân tích vai trò bổ trợ giữa keyword matching và semantic similarity. | |
+| 08/07/2026 | - Thiết kế cách biểu diễn tài liệu theo mô hình parent-child.<br>- Chia tài liệu nguồn thành các child chunk nhỏ để hỗ trợ dense retrieval.<br>- Giữ lại parent document để cung cấp context đầy đủ hơn.<br>- Xây dựng ánh xạ child-to-parent. | |
+| 09/07/2026 | - Kết hợp BM25 và BGE-M3 thành hybrid candidate pipeline.<br>- Xây dựng query decomposition cho các câu hỏi phức tạp.<br>- Bổ sung adaptive retrieval để hệ thống có thể thực hiện thêm retrieval hop khi bằng chứng hiện tại chưa đủ. | |
+| 10/07/2026 | - Bổ sung reranking bằng `cross-encoder/ms-marco-MiniLM-L-6-v2`.<br>- Hoàn thiện retrieval flow: decomposition → BM25 + BGE-M3 → adaptive retrieval → candidate aggregation → reranking → selected evidence.<br>- Kiểm tra bằng chứng truy xuất và điều chỉnh các tham số cấu hình. | |
 
+### Kết quả đạt được
 
-### Kết quả đạt được tuần 5:
-
-* Hiểu ý tưởng cốt lõi của RAG và vì sao việc "ground" câu trả lời vào bằng chứng đã truy xuất giúp giảm hallucination.
-
-* Xây dựng được một pipeline naive RAG hoạt động: chunking, embedding, vector similarity search, và sinh câu trả lời dựa trên prompt.
-
-* Chạy pipeline end-to-end trên một mẫu câu hỏi HotpotQA.
-
-* Đo được độ chính xác baseline (EM/F1) và nhận thấy retrieval một lượt (naive) thường thất bại với các câu hỏi đa bước cần bằng chứng từ nhiều tài liệu.
-
-* Xác định đây chính là động lực để tìm hiểu các kỹ thuật RAG nâng cao trong tuần tới.
-* ...
+* Xây dựng BM25 lexical retrieval.
+* Chọn BGE-M3 làm dense embedding model chính của hệ thống.
+* Hoàn thiện hybrid retrieval pipeline kết hợp lexical và semantic retrieval.
+* Xây dựng parent-child document indexing.
+* Bổ sung query decomposition và adaptive multi-hop retrieval.
+* Tích hợp cross-encoder reranking để cải thiện thứ tự của các bằng chứng đã truy xuất.
+* Hoàn thiện kiến trúc retrieval chính được sử dụng trong CloudHop RAG.

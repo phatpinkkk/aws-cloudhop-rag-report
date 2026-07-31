@@ -1,37 +1,34 @@
 ---
-title: "Worklog Tuần 2"
-date: 2024-01-01
-weight: 1
+title: "Nhật ký tuần 2"
+date: 2026-06-15
+weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
 
+### Mục tiêu tuần 2
 
-### Mục tiêu tuần 2:
+* Hiểu cách Amazon S3 cung cấp khả năng lưu trữ object lâu dài trên cloud.
+* Nắm được cách AWS quản lý danh tính và quyền truy cập thông qua IAM.
+* Tìm hiểu những khái niệm networking cơ bản của Amazon VPC.
+* Thực hành kiểm soát quyền truy cập bằng role, policy và security group.
+* Hiểu cách compute, storage, identity và networking phối hợp với nhau trong một ứng dụng AWS.
 
-* Hiểu các dịch vụ lưu trữ và định danh cốt lõi của AWS: Amazon S3 và IAM.
-* Hiểu các khái niệm networking cơ bản của AWS với Amazon VPC.
-* Thực hành tạo và bảo mật tài nguyên cloud theo nguyên tắc least privilege.
+### Công việc thực hiện trong tuần
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                              | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Tìm hiểu Amazon S3: <br>&emsp; + Bucket & object <br>&emsp; + Storage classes <br>&emsp; + Versioning <br> - **Thực hành:** tạo bucket, upload/download object, cấu hình bucket policy            | 15/06/2026   | 15/06/2026      |                                            |
-| 3   | - Tìm hiểu IAM: <br>&emsp; + User, group, role <br>&emsp; + Policy & least privilege <br> - **Thực hành:** tạo IAM role với policy giới hạn quyền và kiểm tra quyền truy cập                        | 16/06/2026   | 16/06/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tìm hiểu VPC cơ bản: <br>&emsp; + VPC & subnet (public/private) <br>&emsp; + Route table & internet gateway <br>&emsp; + Security group so với NACL                                               | 17/06/2026   | 17/06/2026      |                                            |
-| 5   | - **Thực hành:** dựng một VPC với subnet public/private; khởi tạo EC2 instance bên trong và kiểm soát truy cập bằng security group                                                                  | 18/06/2026   | 18/06/2026      |                                            |
-| 6   | - Tìm hiểu S3 Gateway endpoint và các mô hình kết nối riêng tư <br> - Review công việc trong tuần cùng mentor                                                                                        | 19/06/2026   | 19/06/2026      |                                            |
+| Ngày | Công việc | Tài liệu tham khảo |
+| --- | --- | --- |
+| 15/06/2026 | - Tìm hiểu các khái niệm của Amazon S3:<br>&emsp; + Bucket và object<br>&emsp; + Prefix<br>&emsp; + Storage classes<br>&emsp; + Versioning<br>- **Thực hành:** tạo bucket và thử upload/download object. | <https://cloudjourney.awsstudygroup.com/> |
+| 16/06/2026 | - Tìm hiểu quyền truy cập và cơ chế bảo vệ dữ liệu trên S3.<br>- Phân biệt identity-based policy và resource-based policy.<br>- Tìm hiểu cấu hình public access và các nguyên tắc bảo mật S3 cơ bản. | |
+| 17/06/2026 | - Tìm hiểu các thành phần chính của IAM:<br>&emsp; + Users<br>&emsp; + Groups<br>&emsp; + Roles<br>&emsp; + Policies<br>- Tìm hiểu nguyên tắc least privilege.<br>- Hiểu lý do workload trên AWS nên sử dụng IAM role thay vì hard-code thông tin xác thực. | |
+| 18/06/2026 | - Tìm hiểu nền tảng Amazon VPC:<br>&emsp; + VPC và subnet<br>&emsp; + Route table<br>&emsp; + Internet Gateway<br>&emsp; + Security group<br>&emsp; + Public và private networking | |
+| 19/06/2026 | - **Thực hành:** kết hợp EC2, IAM và S3 trong một workload đơn giản.<br>- Cấu hình quyền để compute resource có thể truy cập storage resource phù hợp.<br>- Ôn lại cách network và identity control phối hợp để bảo vệ workload trên AWS. | |
 
+### Kết quả đạt được
 
-### Kết quả đạt được tuần 2:
-
-* Hiểu các khái niệm cốt lõi của S3 (bucket, storage classes, versioning) và đã tạo/cấu hình một S3 bucket kèm bucket policy.
-
-* Hiểu kiến thức nền tảng của IAM và đã tạo một IAM role với quyền hạn theo nguyên tắc least privilege.
-
-* Dựng được một VPC cơ bản với subnet public/private và kiểm soát traffic bằng security group.
-
-* Hiểu cách S3 Gateway endpoint giúp tài nguyên trong VPC truy cập S3 riêng tư mà không cần đi qua internet công cộng.
-
-* Có cái nhìn rõ ràng hơn về cách storage, identity và networking phối hợp với nhau để bảo mật một workload.
-* ...
+* Hiểu những khái niệm quan trọng của Amazon S3 và thực hành lưu trữ, truy xuất object.
+* Nắm được cách policy và quyền truy cập kiểm soát dữ liệu trên S3.
+* Hiểu IAM user, role, policy và nguyên tắc least privilege.
+* Nắm được kiến thức cơ bản về VPC, subnet, routing và security group.
+* Hiểu cách EC2 workload truy cập các dịch vụ AWS an toàn thông qua IAM permission.
+* Xây dựng được nền tảng về storage, identity và networking sau này được áp dụng trực tiếp trong kiến trúc CloudHop RAG.

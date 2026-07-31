@@ -1,37 +1,35 @@
 ---
 title: "Week 7 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-07-20
+weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
 
+### Week 7 Objectives
 
-### Week 7 Objectives:
+* Validate the corrected v002 retrieval pipeline quantitatively.
+* Measure retrieval quality and runtime before production deployment.
+* Improve the reliability of long-running benchmark execution.
+* Evaluate the complete retrieval-to-generation pipeline.
+* Finalize the AWS deployment architecture and prepare cloud artifacts.
 
-* Move the RAG pipeline's components onto AWS services instead of running everything locally.
-* Understand how to host the corpus, embeddings, and orchestration logic on AWS.
-* Add monitoring for the pipeline using CloudWatch.
+### Tasks to be carried out this week
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                             | Start Date | Completion Date | Reference Material                        |
-| --- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Plan which AWS services will host each pipeline component (corpus storage, vector index, orchestration, LLM access)               | 07/20/2026 | 07/20/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 3   | - **Practice:** upload the HotpotQA corpus and precomputed embeddings to S3                                                          | 07/21/2026 | 07/21/2026      |                                            |
-| 4   | - **Practice:** wrap the retrieval + multi-hop reasoning logic in a Lambda function / SageMaker-hosted service                       | 07/22/2026 | 07/22/2026      |                                            |
-| 5   | - **Practice:** expose the pipeline through an API endpoint and test it with sample HotpotQA questions                              | 07/23/2026 | 07/23/2026      |                                            |
-| 6   | - Add CloudWatch logging and alarms around the pipeline (errors, latency) <br> - Review progress with mentor                        | 07/24/2026 | 07/24/2026      |                                            |
+| Date | Task | Reference Material |
+| --- | --- | --- |
+| 20/07/2026 | - Reconstruct the corrected v002 vector index using the prepared BGE-M3 vectors.<br>- Run smoke tests on known HotpotQA examples.<br>- Verify candidate retrieval, selected evidence, supporting-title coverage, reranking, and latency fields. | |
+| 21/07/2026 | - Run an intermediate retrieval benchmark.<br>- Measure candidate and selected evidence quality using Recall, MRR, nDCG, and supporting-title coverage.<br>- Inspect difficult and failed retrieval cases. | |
+| 22/07/2026 | - Profile decomposition, retrieval/adaptive planning, reranking, and total retrieval latency.<br>- Add retries, checkpoints, persistent attempts, successful-ID skipping, and resume support for long evaluation runs. | |
+| 23/07/2026 | - Complete the corrected 500-question retrieval benchmark.<br>- Analyze retrieval quality, latency distribution, and runtime stability.<br>- Run the fixed end-to-end evaluation using retrieved evidence and Groq generation. | |
+| 24/07/2026 | - Consolidate retrieval and end-to-end evaluation results.<br>- Finalize the production AWS architecture: Amplify → API Gateway → EC2 FastAPI → S3 / S3 Vectors → Groq.<br>- Prepare corpus, BM25, manifest, and vector artifacts for AWS deployment. | |
 
+### Week 7 Achievements
 
-### Week 7 Achievements:
-
-* Migrated the HotpotQA corpus and embeddings from local storage to S3.
-
-* Wrapped the advanced RAG retrieval/reasoning logic in an AWS-hosted service.
-
-* Exposed the pipeline through an API endpoint and validated it with sample questions.
-
-* Added CloudWatch logging and alarms to monitor pipeline errors and latency.
-
-* Confirmed the AWS-hosted pipeline produces the same results as the local prototype from Week 6.
-* ...
+* Completed the corrected **500-question retrieval benchmark with 500/500 successful questions**.
+* Achieved candidate mean supporting-title recall of **0.9920** and candidate all-title coverage of **0.9840**.
+* Achieved selected Top-10 supporting-title recall of **0.9740**, MRR of **0.9446**, and nDCG@10 of **0.9162**.
+* Measured mean retrieval-pipeline latency of **25.91 seconds** and median latency of **25.72 seconds**.
+* Added resumable benchmark execution and recovery mechanisms for long-running evaluation.
+* Completed the fixed 20-question end-to-end evaluation with **Answer EM = 0.7500**, **Answer F1 = 0.7750**, and **15/20 correct answers**.
+* Finalized the AWS architecture and prepared the validated retrieval artifacts for production deployment.
