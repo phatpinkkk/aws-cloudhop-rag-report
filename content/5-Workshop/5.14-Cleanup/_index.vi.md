@@ -1,10 +1,14 @@
 ---
-title: "Dọn dẹp"
-date: 2024-01-01
-weight: 9
+title: "Dọn dẹp tài nguyên"
+date: 2026-07-31
+weight: 14
 chapter: false
-pre: " <b> 5.9. </b> "
+pre: " <b> 5.14. </b> "
 ---
+
+Sau khi hoàn thành workshop, các tài nguyên AWS được tạo cho CloudHop RAG nên được xóa nếu không còn sử dụng. Việc dọn dẹp giúp tránh duy trì các tài nguyên compute, lưu trữ, network và ứng dụng không còn cần thiết trong tài khoản AWS.
+
+Các tài nguyên nên được xóa theo thứ tự phù hợp để tránh để lại những thành phần phụ thuộc không còn được sử dụng.
 
 ### Dọn dẹp
 

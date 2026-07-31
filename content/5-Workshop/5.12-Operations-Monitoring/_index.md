@@ -1,10 +1,24 @@
 ---
-title: "Operational Guide"
-date: 2024-01-01
-weight: 8
+title: "Operations and Troubleshooting"
+date: 2026-07-31
+weight: 12
 chapter: false
-pre: " <b> 5.8. </b> "
+pre: " <b> 5.12. </b> "
 ---
+
+After deployment, most day-to-day operation of CloudHop RAG centers on the EC2 backend. The application runs as the `aws-rag-api` systemd service, while **AWS Systems Manager Session Manager** provides access to the instance when maintenance or troubleshooting is required.
+
+The backend exposes `/health` and `/warmup` endpoints for checking application status and initializing the retrieval pipeline. Service output can also be inspected directly through the systemd journal when a request fails or the backend does not start correctly.
+
+<!--
+Continue this section with:
+- starting/restarting/checking aws-rag-api with systemctl;
+- viewing backend logs with journalctl;
+- using /health and /warmup for runtime checks;
+- accessing EC2 through Systems Manager Session Manager;
+- a short troubleshooting table for the main issues encountered during deployment, such as API Gateway errors, CORS, Mixed Content, unavailable backend, or slow requests.
+Do not introduce CloudWatch; it is not part of the implemented system.
+-->
 
 ### Operational Guide
 

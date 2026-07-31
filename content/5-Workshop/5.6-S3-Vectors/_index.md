@@ -1,10 +1,25 @@
 ---
-title: "S3 Vectors Setup"
-date: 2024-01-01
-weight: 4
+title: "Amazon S3 Vectors"
+date: 2026-07-31
+weight: 6
 chapter: false
-pre: " <b> 5.4. </b> "
+pre: " <b> 5.6. </b> "
 ---
+
+BM25 is effective when the wording of a question overlaps strongly with the supporting document, but multi-hop questions may also require evidence expressed in different terms. CloudHop RAG therefore combines lexical retrieval with dense semantic retrieval using **Amazon S3 Vectors**.
+
+Each child chunk produced during the offline build is encoded with **BGE-M3** into a 1,024-dimensional vector. These vectors are stored in an S3 Vectors index and queried by the EC2 backend at runtime using the embedding of the incoming question or retrieval query.
+
+<!--
+Continue this section with:
+- creation of the S3 vector bucket and vector index;
+- final index settings: BGE-M3, dimension 1024, cosine distance;
+- ingestion of the prepared child vectors;
+- the final v002 index identifier;
+- verification that the expected number of vectors is present;
+- a short explanation of the runtime flow: query embedding → QueryVectors → child results → parent-document mapping.
+Do not repeat the full hybrid retrieval algorithm from earlier sections.
+-->
 
 ### S3 Vectors Setup
 

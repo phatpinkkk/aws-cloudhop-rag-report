@@ -1,10 +1,14 @@
 ---
-title: "Thiết lập S3 Storage"
-date: 2024-01-01
-weight: 3
+title: "Lưu trữ trên Amazon S3"
+date: 2026-07-31
+weight: 5
 chapter: false
-pre: " <b> 5.3. </b> "
+pre: " <b> 5.5. </b> "
 ---
+
+Các retrieval artifact được tạo ở bước trước cần được lưu trữ độc lập với EC2 instance đang vận hành backend. Vì vậy, CloudHop RAG sử dụng **Amazon S3** làm nơi lưu trữ lâu dài cho corpus đã xử lý, BM25 index, document mapping và các index manifest cần thiết cho RAG pipeline khi chạy online.
+
+Việc lưu các artifact này trên S3 cho phép backend tải và sử dụng đúng phiên bản artifact khi khởi động mà không cần xây dựng lại corpus hoặc retrieval index trên EC2.
 
 ### Thiết lập S3 Storage
 

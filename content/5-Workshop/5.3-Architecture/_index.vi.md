@@ -1,10 +1,18 @@
 ---
-title: "Tổng quan kiến trúc"
-date: 2024-01-01
-weight: 1
+title: "Kiến trúc hệ thống"
+date: 2026-07-31
+weight: 3
 chapter: false
-pre: " <b> 5.1. </b> "
+pre: " <b> 5.3. </b> "
 ---
+
+CloudHop RAG được triển khai dưới dạng một ứng dụng RAG trên nền tảng web tại **Asia Pacific (Singapore) Region (`ap-southeast-1`)**. Kiến trúc tách riêng frontend, lớp API, RAG backend và hệ thống lưu trữ phục vụ retrieval, giúp mỗi thành phần có vai trò rõ ràng nhưng vẫn phối hợp trong một luồng xử lý thống nhất.
+
+Người dùng tương tác với frontend được triển khai trên **AWS Amplify**. Request được gửi qua **Amazon API Gateway** đến FastAPI backend chạy trên **Amazon EC2**. Backend thực hiện lexical retrieval bằng BM25 artifact lưu trên **Amazon S3**, đồng thời thực hiện dense retrieval thông qua **Amazon S3 Vectors**, sau đó xử lý các bằng chứng thu được trước khi gửi context cuối cùng đến Groq LLM API.
+
+## Sơ đồ kiến trúc
+
+![Kiến trúc AWS CloudHop RAG](/images/5-Workshop/5.3-Architecture/architecture.png)
 
 ### Tổng quan kiến trúc
 

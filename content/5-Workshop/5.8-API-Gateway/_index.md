@@ -1,10 +1,25 @@
 ---
-title: "API Gateway & CORS"
-date: 2024-01-01
-weight: 6
+title: "Amazon API Gateway"
+date: 2026-07-31
+weight: 8
 chapter: false
-pre: " <b> 5.6. </b> "
+pre: " <b> 5.8. </b> "
 ---
+
+The FastAPI backend on EC2 is available over HTTP, while the frontend delivered by AWS Amplify runs over HTTPS. A browser cannot safely call the HTTP backend directly from the HTTPS frontend, so **Amazon API Gateway** is used as the public HTTPS entry point for the application.
+
+API Gateway receives requests from the browser and forwards them to the FastAPI service on EC2. It also provides the browser-facing CORS configuration required for the Amplify frontend to call the backend successfully.
+
+<!--
+Continue this section with:
+- creation of the HTTP API in API Gateway;
+- EC2 backend integration;
+- the three routes: GET /health, POST /warmup, POST /query;
+- CORS configuration for the Amplify frontend origin;
+- deployment/auto-deploy of the API;
+- testing the HTTPS /health route and a POST request through API Gateway.
+Keep the Mixed Content explanation short because the reason is already established above.
+-->
 
 ### API Gateway & CORS
 

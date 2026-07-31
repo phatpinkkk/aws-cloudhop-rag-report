@@ -1,10 +1,14 @@
 ---
-title: "Thiết lập S3 Vectors"
-date: 2024-01-01
-weight: 4
+title: "Amazon S3 Vectors"
+date: 2026-07-31
+weight: 6
 chapter: false
-pre: " <b> 5.4. </b> "
+pre: " <b> 5.6. </b> "
 ---
+
+BM25 hoạt động hiệu quả khi câu hỏi có nhiều từ hoặc cụm từ trùng với tài liệu hỗ trợ, nhưng các câu hỏi đa bước cũng có thể cần những bằng chứng được diễn đạt theo cách khác. Vì vậy, CloudHop RAG kết hợp lexical retrieval với dense semantic retrieval thông qua **Amazon S3 Vectors**.
+
+Mỗi child chunk được tạo trong quá trình offline build được mã hóa bằng **BGE-M3** thành vector 1.024 chiều. Các vector này được lưu trong S3 Vectors index và được EC2 backend truy vấn tại runtime bằng embedding của câu hỏi hoặc retrieval query tương ứng.
 
 ### Thiết lập S3 Vectors
 

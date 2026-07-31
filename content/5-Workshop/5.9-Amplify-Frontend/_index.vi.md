@@ -1,10 +1,14 @@
 ---
-title: "Triển khai Frontend Amplify"
-date: 2024-01-01
-weight: 7
+title: "Triển khai Frontend với AWS Amplify"
+date: 2026-07-31
+weight: 9
 chapter: false
-pre: " <b> 5.7. </b> "
+pre: " <b> 5.9. </b> "
 ---
+
+Thành phần trực tiếp tương tác với người dùng của CloudHop RAG là một ứng dụng web **React/Vite** được triển khai bằng **AWS Amplify**. Giao diện cho phép người dùng nhập câu hỏi, nhận câu trả lời được sinh ra và xem các nguồn hỗ trợ do RAG backend trả về.
+
+Frontend giao tiếp với backend thông qua HTTPS endpoint được tạo trên Amazon API Gateway. Cách triển khai này tách giao diện web khỏi EC2 service nhưng vẫn cung cấp một điểm truy cập thống nhất cho người dùng.
 
 ### Triển khai Frontend Amplify
 

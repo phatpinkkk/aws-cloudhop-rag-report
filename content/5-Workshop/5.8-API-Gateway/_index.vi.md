@@ -1,10 +1,14 @@
 ---
-title: "API Gateway & CORS"
-date: 2024-01-01
-weight: 6
+title: "Amazon API Gateway"
+date: 2026-07-31
+weight: 8
 chapter: false
-pre: " <b> 5.6. </b> "
+pre: " <b> 5.8. </b> "
 ---
+
+FastAPI backend trên EC2 hoạt động qua HTTP, trong khi frontend được AWS Amplify phân phối qua HTTPS. Trình duyệt không thể gọi trực tiếp HTTP backend từ một trang HTTPS, vì vậy **Amazon API Gateway** được sử dụng làm điểm truy cập HTTPS công khai cho ứng dụng.
+
+API Gateway nhận request từ trình duyệt và chuyển tiếp đến FastAPI service trên EC2. Dịch vụ này đồng thời cung cấp cấu hình CORS cần thiết để frontend trên Amplify có thể gọi backend thành công.
 
 ### API Gateway & CORS
 

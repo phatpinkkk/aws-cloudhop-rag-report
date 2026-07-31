@@ -1,10 +1,14 @@
 ---
-title: "Triển khai Backend trên EC2"
-date: 2024-01-01
-weight: 5
+title: "Triển khai Backend trên Amazon EC2"
+date: 2026-07-31
+weight: 7
 chapter: false
-pre: " <b> 5.5. </b> "
+pre: " <b> 5.7. </b> "
 ---
+
+FastAPI backend là lớp xử lý chính của CloudHop RAG. Backend nhận câu hỏi từ lớp API, tải các retrieval artifact đã chuẩn bị, thực hiện BM25 và dense retrieval, điều phối multi-hop pipeline, xây dựng context cuối cùng và gửi request sinh câu trả lời đến Groq.
+
+Backend được triển khai trên **Amazon EC2**, cung cấp một môi trường vận hành ổn định để Python RAG pipeline và các dependency của hệ thống có thể được duy trì giữa các request.
 
 ### Triển khai Backend trên EC2
 

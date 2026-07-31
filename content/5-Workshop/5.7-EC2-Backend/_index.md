@@ -1,10 +1,27 @@
 ---
-title: "EC2 Backend Deployment"
-date: 2024-01-01
-weight: 5
+title: "Amazon EC2 Backend Deployment"
+date: 2026-07-31
+weight: 7
 chapter: false
-pre: " <b> 5.5. </b> "
+pre: " <b> 5.7. </b> "
 ---
+
+The FastAPI backend is the main execution layer of CloudHop RAG. It receives questions from the API layer, loads the prepared retrieval artifacts, performs BM25 and dense retrieval, coordinates the multi-hop pipeline, constructs the final context, and sends the generation request to Groq.
+
+The backend is deployed on **Amazon EC2**, giving the application a persistent environment in which the Python RAG pipeline and its model dependencies can remain loaded between requests.
+
+<!--
+Continue this section with:
+- launching/configuring the EC2 instance in ap-southeast-1;
+- attaching the required IAM role;
+- access through AWS Systems Manager Session Manager;
+- cloning the repository and installing backend dependencies;
+- production environment configuration and final v002 artifact identifiers;
+- starting FastAPI under the aws-rag-api systemd service;
+- assigning the Elastic IP if used by the final deployment;
+- validating /health and /warmup locally on EC2.
+Keep commands focused on the reproducible deployment. Do not repeat the architecture discussion from 5.3.
+-->
 
 ### EC2 Backend Deployment
 

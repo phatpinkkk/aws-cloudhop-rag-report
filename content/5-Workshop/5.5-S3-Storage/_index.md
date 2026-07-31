@@ -1,10 +1,24 @@
 ---
-title: "S3 Storage Setup"
-date: 2024-01-01
-weight: 3
+title: "Amazon S3 Storage"
+date: 2026-07-31
+weight: 5
 chapter: false
-pre: " <b> 5.3. </b> "
+pre: " <b> 5.5. </b> "
 ---
+
+The retrieval artifacts created in the previous step need to remain available independently of the EC2 instance that runs the backend. CloudHop RAG therefore uses **Amazon S3** as the persistent store for the processed corpus, BM25 index, document mappings, and index manifests required by the online RAG pipeline.
+
+Keeping these files in S3 allows the backend to download and load the required artifact version when it starts, without rebuilding the corpus or retrieval indexes on EC2.
+
+<!--
+Continue this section with:
+- creation of the project S3 bucket in ap-southeast-1;
+- the main S3 layout for corpora, processed documents, BM25 indexes, manifests, and S3 Vectors import files;
+- the upload command or upload procedure;
+- verification that the expected files exist in S3;
+- how EC2 later reads these artifacts through its IAM role.
+Keep the explanation specific to how CloudHop RAG uses S3. Do not explain generic S3 concepts.
+-->
 
 ### S3 Storage Setup
 

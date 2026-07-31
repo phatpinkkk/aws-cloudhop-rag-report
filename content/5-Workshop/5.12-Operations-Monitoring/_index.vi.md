@@ -1,10 +1,14 @@
 ---
-title: "Hướng dẫn vận hành"
-date: 2024-01-01
-weight: 8
+title: "Vận hành và xử lý sự cố"
+date: 2026-07-31
+weight: 12
 chapter: false
-pre: " <b> 5.8. </b> "
+pre: " <b> 5.12. </b> "
 ---
+
+Sau khi triển khai, phần lớn công việc vận hành CloudHop RAG tập trung vào EC2 backend. Ứng dụng chạy dưới dạng `aws-rag-api` systemd service, trong khi **AWS Systems Manager Session Manager** được sử dụng để truy cập instance khi cần bảo trì hoặc xử lý sự cố.
+
+Backend cung cấp các endpoint `/health` và `/warmup` để kiểm tra trạng thái ứng dụng và khởi tạo retrieval pipeline. Khi service không khởi động đúng hoặc request gặp lỗi, log của backend có thể được kiểm tra trực tiếp thông qua systemd journal.
 
 ### Hướng dẫn vận hành
 

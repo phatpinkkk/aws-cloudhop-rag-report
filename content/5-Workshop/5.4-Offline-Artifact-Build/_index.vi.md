@@ -1,10 +1,16 @@
 ---
-title: "Offline Artifact Build"
-date: 2024-01-01
-weight: 2
+title: "Xây dựng Offline Artifact"
+date: 2026-07-31
+weight: 4
 chapter: false
-pre: " <b> 5.2. </b> "
+pre: " <b> 5.4. </b> "
 ---
+
+Trước khi RAG backend có thể xử lý câu hỏi, dữ liệu nguồn cần được chuyển thành các artifact sẵn sàng cho retrieval. Quá trình này được thực hiện offline để các bước xử lý tài liệu, chia đoạn, tạo embedding và xây dựng index không phải lặp lại mỗi khi người dùng gửi request.
+
+CloudHop RAG sử dụng **HotpotQA Distractor** làm bộ dữ liệu benchmark cho quá trình này. HotpotQA được thiết kế cho bài toán hỏi đáp đa bước, trong đó thông tin cần thiết cho một câu trả lời có thể nằm trên nhiều tài liệu hỗ trợ khác nhau. Các trường câu hỏi, câu trả lời, context và supporting facts đã được gán nhãn tạo điều kiện thuận lợi cho việc xây dựng và đánh giá retrieval pipeline của dự án.
+
+Bộ artifact cuối cùng được xây dựng từ **500 câu hỏi thuộc validation split**. Context của các câu hỏi được chuẩn hóa về định dạng corpus của dự án trước khi tạo parent document, child chunk, BM25 index và BGE-M3 embedding.
 
 ### Offline Artifact Build
 

@@ -1,10 +1,29 @@
 ---
 title: "Offline Artifact Build"
-date: 2024-01-01
-weight: 2
+date: 2026-07-31
+weight: 4
 chapter: false
-pre: " <b> 5.2. </b> "
+pre: " <b> 5.4. </b> "
 ---
+
+Before the RAG backend can answer questions, the source data must be converted into retrieval-ready artifacts. This work is performed offline so that document processing, chunking, embedding generation, and index construction do not need to happen during a user request.
+
+CloudHop RAG uses the **HotpotQA Distractor** dataset as the benchmark source for this process. HotpotQA is designed for multi-hop question answering, where the information needed for an answer may be distributed across several supporting documents. Its annotated questions, answers, contexts, and supporting facts make it suitable for building and evaluating the retrieval pipeline used in this project.
+
+The final artifact build uses **500 questions from the validation split**. Their contexts are normalized into the project corpus format before the parent documents, child chunks, BM25 index, and BGE-M3 embeddings are generated.
+
+<!--
+Continue this section with:
+- the input HotpotQA fields used by the project;
+- normalization into corpus.jsonl and eval.jsonl;
+- parent-document and child-chunk creation;
+- BM25 index construction;
+- BGE-M3 embedding generation for the child chunks;
+- generation of the S3 Vectors import files and index manifest;
+- final validated v002 artifact summary: 4,937 parent documents, 4,963 passages processed, 8,279 child vectors, 1,024-dimensional embeddings, 0 missing supporting titles, and 0 title collisions;
+- a short output-folder/file overview.
+Focus on what is built and why. Do not turn this into a line-by-line notebook walkthrough.
+-->
 
 ### Offline Artifact Build
 
