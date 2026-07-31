@@ -1,56 +1,46 @@
 ---
-title: "Event 2"
-date: 2024-01-01
-weight: 1
+title: "Cloud Architect"
+date: 2026-06-20
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
+## Event Information
 
-# Summary Report: AI Agent Build Week
+**Event Name:** Cloud Architect  
+**Date:** June 20, 2026  
+**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
+**Role:** Attendee
 
-### Event Information
+## Event Content
 
-&emsp; **Event Name:** AI Agent Build Week
+Cloud Architect was organized as a team-based AWS challenge rather than a normal presentation.
 
-&emsp; **Date & Time:** July 25, 2026
+Teams competed by answering questions about AWS services and cloud architecture, with the questions becoming more difficult as the round progressed. The event also included game mechanics such as **Minimum Risk**, which reduced the penalty for an uncertain answer, and **Star of Hope**, which doubled both the reward and the risk for an answer the team felt confident about.
 
-&emsp; **Location:** *(to be added)*
+The questions were not limited to remembering service names. Many were scenario-based and required participants to think about which AWS service, permission model, or architecture choice would be appropriate for a particular situation.
 
-&emsp; **Role:** Attendee
+![A team answering an Amazon S3 access-control scenario](/images/4-EventsParticipated/event-20.6-1.png)
 
-### Event Content
+*A team working through an Amazon S3 access-control question during the competition.*
 
-Attended the "AI Agent Build Week" workshop organized by FCAJ. During the event, teams that had competed in the hackathon came to share how they built their projects — from ideation, design, and deployment, to the challenges they faced along the way. The teams also shared how they used AWS services to solve problems within their projects.
+## What I Learned
 
-### Favorite Projects
+This event made me realize how **broad cloud computing really is**.
 
-- **KFC conversational ordering:** A chatbot project that lets customers place orders at KFC through conversation.
-- **Anti-money laundering system:** A system that helps banks and financial institutions detect and prevent money laundering activities.
+Before working more seriously with AWS, it was easy to think of cloud mainly in terms of compute and storage. During the event, the questions moved across areas such as storage, security, access control, networking, architecture, and service integration. A correct solution often depended on understanding how several pieces worked together rather than knowing one service in isolation.
 
-### What I Learned
+That made the importance of cloud architecture much clearer to me. Building a system is not simply choosing a list of AWS services. Decisions about permissions, availability, communication between components, scalability, and cost can all affect whether an architecture is actually appropriate.
 
-- End-to-End AI Agent Development Pipeline: Gained a comprehensive understanding of the complete lifecycle of AI-driven products, spanning from initial problem identification and architectural design to cloud deployment and continuous monitoring.
+The scenario format also made the concepts easier to remember because there was a reason behind each choice.
 
-- Practical Cloud & AI Integration: Learned how top-performing teams effectively leverage AWS cloud infrastructure to handle data processing, model hosting, and real-time execution required for intelligent AI agents.
+## Experience and Reflection
 
-- Overcoming Engineering Trade-offs: Absorbed valuable insights into managing real-world constraints such as API latency, system scalability, security protocols, and cost management when deploying complex AI solutions.
+The atmosphere was much more energetic than a normal technical session. With many teams and around one hundred attendees, each question generated discussion and different opinions before the answer was revealed.
 
-- Product-Oriented Mindset: Realized the importance of aligning advanced technical architecture with actual business logic and target user experiences, ensuring that technical innovations translate directly into core user value.
+![Attendees at the Cloud Architect event](/images/4-EventsParticipated/event-20.6-3.JPG)
 
-### Experience & Photos
+*The Cloud Architect event brought together a large group of FCAJ participants.*
 
-- Event Atmosphere & Community Spirit: The workshop offered an exceptionally engaging environment where passion for technology was evident throughout every presentation. Observing the hackathon teams recount their journeys fostered an inspiring space for technical exchange and professional networking.
-
-- Personal Takeaways: Hearing first-hand accounts of the technical hurdles and design choices behind successful projects provided a highly pragmatic perspective that textbook learning often lacks. It was especially rewarding to see how abstract concepts in AI and cloud architecture were applied to solve tangible domain-specific problems.
-
-- Overall Reflection: Attending this event proved to be an invaluable experience, broadening my technical horizons and greatly motivating me to explore advanced AI agent frameworks and cloud integration paradigms in upcoming projects.
-
-![KFC Order Liveboard demo](/images/4-EventsParticipated/event2_1.png)
-*A team demoing the "KFC Order Liveboard" — tracking orders and AI agent activity in real time.*
-
-![AABW - Adaptive AML/KYT Workflow Engine architecture](/images/4-EventsParticipated/event2_2.png)
-*The "AABW - Adaptive AML/KYT Workflow Engine" architecture for detecting and handling suspicious transactions.*
-
-![At the AI Agent Build Week event](/images/4-EventsParticipated/event2_3.png)
-*A moment from attending the AI Agent Build Week event.*
+For me, the most useful part was seeing how much knowledge sits behind the phrase "cloud architecture." The event made me more interested in understanding AWS as a connected ecosystem instead of learning services one by one.

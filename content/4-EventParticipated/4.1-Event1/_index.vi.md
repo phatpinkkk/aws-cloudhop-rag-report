@@ -1,42 +1,45 @@
 ---
-title: "Event 1"
-date: 2024-01-01
+title: "FCAJ Community Day"
+date: 2026-06-06
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
+## Thông tin sự kiện
 
-# Bài thu hoạch: Workshop FCAJ *(bổ sung tên chính thức của sự kiện)*
+**Tên sự kiện:** FCAJ Community Day  
+**Ngày:** 06/06/2026  
+**Vai trò:** Người tham dự
 
-### Thông tin sự kiện
+## Nội dung sự kiện
 
-&emsp; **Tên sự kiện:** FCAJ Workshop
+FCAJ Community Day là một buổi chia sẻ cộng đồng với nhiều diễn giả và nhiều chủ đề khác nhau, từ kỹ thuật đến định hướng nghề nghiệp.
 
-&emsp; **Thời gian:** 20/06/2026
+Các nội dung chính gồm:
 
-&emsp; **Địa điểm:** Tầng 26, Tòa nhà Bitexco, 02 Hải Triều, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh
+- xây dựng ứng dụng multiplayer với **Godot, AWS WebSockets, Lambda và DynamoDB**;
+- xây dựng ứng dụng **GraphRAG với Amazon Bedrock và Amazon Neptune**;
+- cách làm việc nhóm hiệu quả;
+- Docker và containerization;
+- hành trình nghề nghiệp từ **IT Helpdesk lên Senior Sysadmin**, sau đó từng bước tiếp cận Cloud và DevOps.
 
-&emsp; **Vai trò:** Người tham dự
+Vì các phần trình bày khá đa dạng, tôi cảm nhận sự kiện này giống một buổi gặp gỡ và chia sẻ kinh nghiệm hơn là một workshop kỹ thuật theo khuôn mẫu. Mỗi diễn giả mang đến một góc nhìn khác nhau về cách họ học, làm việc và phát triển trong ngành công nghệ.
 
-### Nội dung sự kiện
+## Điều tôi học được
 
-Tham gia workshop do FCAJ (First Cloud AI Journey) tổ chức. Trong sự kiện, các đội thi đấu với nhau bằng cách trả lời những câu hỏi do ban tổ chức đưa ra, xoay quanh nhiều dịch vụ AWS khác nhau.
+Phần để lại cho tôi nhiều ấn tượng nhất là câu chuyện nghề nghiệp từ IT Helpdesk lên Senior Sysadmin, rồi chuyển dần sang Cloud và DevOps.
 
-### Những gì học được
+Tôi thấy câu chuyện này khá gần gũi vì nó cho thấy một con đường nghề nghiệp trong công nghệ không nhất thiết phải đi theo một lộ trình thẳng và rõ ràng ngay từ đầu. Kiến thức có thể được tích lũy từng bước thông qua công việc thực tế, xử lý sự cố và sự tò mò muốn hiểu thêm về lớp hệ thống phía sau. Việc đi từ hỗ trợ người dùng đến quản trị hệ thống rồi tiếp tục tìm hiểu hạ tầng cloud là một ví dụ rất thực tế về cách năng lực kỹ thuật được hình thành theo thời gian.
 
-- Mở rộng hệ sinh thái công nghệ Cloud: Tiếp thu kiến thức tổng quan về hệ sinh thái dịch vụ đám mây của Amazon Web Services (AWS), nhận diện được vai trò và tiềm năng ứng dụng thực tế của từng nhóm dịch vụ chính trong việc tối ưu hóa hạ tầng kĩ thuật.
+Những phần còn lại cũng giúp tôi có cái nhìn rộng hơn về thế giới công nghệ. WebSockets, GraphRAG, Docker hay teamwork nghe có vẻ là những chủ đề khá khác nhau, nhưng khi đặt cạnh nhau, tôi thấy rõ hơn rằng cloud engineering không tồn tại riêng lẻ mà luôn liên quan đến software development, infrastructure, AI và khả năng phối hợp giữa con người.
 
-- Tư duy triển khai và kiến trúc hệ thống: Nắm bắt được nguyên lý cơ bản trong việc cấu hình và kết nối các dịch vụ AWS với nhau nhằm phục vụ việc xây dựng giải pháp phần mềm bài bản, có khả năng mở rộng (scalability) và đảm bảo tính sẵn sàng cao.
+## Trải nghiệm và suy nghĩ
 
-- Kỹ năng phân tích & giải quyết vấn đề: Thông qua định dạng câu hỏi tương tác mang tính thử thách, bản thân rèn luyện được tư duy phản xạ nhanh, khả năng định vị bài toán và lựa chọn công cụ/dịch vụ tiệm cận nhất với yêu cầu thực tế.
+Tôi đến sự kiện khá sớm nên bức ảnh tôi chụp là lúc phòng vẫn còn vắng. Nhìn lại, tôi lại khá thích khoảnh khắc này vì nó ghi lại thời điểm ngay trước khi một ngày đầy các buổi chia sẻ và trao đổi bắt đầu.
 
-- Tầm nhìn về xu hướng công nghệ: Nhận thức rõ ràng hơn về bức tranh toàn cảnh của điện toán đám mây trong kỷ nguyên số, từ đó xác định được những định hướng học tập và trau dồi kĩ năng chuyên môn phù hợp cho bản thân trong tương lai.
+![Đến sớm tại sự kiện FCAJ Community Day](/images/4-EventsParticipated/event_6.6.jpg)
 
-### Trải nghiệm và hình ảnh
+*Khu vực trình bày trước khi sự kiện bắt đầu.*
 
-- Không khí sự kiện & Tương tác: Sự kiện mang lại một không gian học tập vô cùng sôi nổi và truyền cảm hứng. Hình thức thi đấu trả lời câu hỏi theo đội nhóm giúp buổi workshop không bị gò bó theo lối truyền tải một chiều, ngược lại thúc đẩy sự chủ động, hào hứng và tinh thần kết nối giữa các thành viên tham dự.
-
-- Ấn tượng cá nhân: Việc được trực tiếp tham gia thảo luận và tiếp cận kiến thức dưới dạng các tình huống thực tế đã giúp tôi tiếp thu thông tin một cách tự nhiên và dễ nhớ hơn rất nhiều. Buổi workshop không chỉ củng cố lại các nền tảng lý thuyết đã biết mà còn mở ra những góc nhìn mới mẻ về cách ứng dụng công nghệ vào thực tiễn kinh doanh và phát triển phần mềm.
-
-- Đánh giá chung: Đây là một trải nghiệm học tập đầy giá trị, mang lại động lực lớn để tôi tiếp tục tìm hiểu sâu hơn về kiến trúc Cloud cũng như các chứng chỉ chuyên môn của AWS trong thời gian tới.
+Điều tôi nhớ nhất sau sự kiện không phải là một dịch vụ AWS cụ thể, mà là cảm giác rằng có rất nhiều con đường khác nhau để phát triển trong lĩnh vực cloud và công nghệ. Đôi khi, để giỏi hơn trong một mảng, trước hết cần hiểu những hệ thống và công việc xung quanh nó.

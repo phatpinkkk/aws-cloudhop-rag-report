@@ -1,42 +1,45 @@
 ---
-title: "Event 1"
-date: 2024-01-01
+title: "FCAJ Community Day"
+date: 2026-06-06
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
+## Event Information
 
-# Summary Report: FCAJ Workshop *(add the event's official name)*
+**Event Name:** FCAJ Community Day  
+**Date:** June 6, 2026  
+**Role:** Attendee
 
-### Event Information
+## Event Content
 
-&emsp; **Event Name:** FCAJ Workshop
+This event was mainly a community sharing day with several speakers covering different technical and career topics.
 
-&emsp; **Date & Time:** June 20, 2026
+The sessions included:
 
-&emsp; **Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City
+- building multiplayer applications with **Godot, AWS WebSockets, Lambda, and DynamoDB**;
+- building **GraphRAG applications with Amazon Bedrock and Amazon Neptune**;
+- effective teamwork;
+- Docker and containerization;
+- a career journey from **IT Helpdesk to Senior Sysadmin**, followed by the first steps toward Cloud and DevOps.
 
-&emsp; **Role:** Attendee
+Because the talks covered very different topics, the event felt less like a formal workshop and more like an opportunity to hear how people with different backgrounds were learning and applying technology.
 
-### Event Content
+## What I Learned
 
-Attended a workshop organized by FCAJ (First Cloud AI Journey). During the event, teams competed against each other by answering questions posed by the organizers, covering a variety of AWS services.
+The part I remember most was the career-sharing session about progressing from IT Helpdesk to Senior Sysadmin and then moving toward Cloud and DevOps.
 
-### What I Learned
+I found this story relatable because it showed that a technical career does not have to follow one direct path. Skills can be built gradually through real work, solving problems, and becoming curious about the next layer of the system. Moving from support work to system administration, and then toward cloud infrastructure, felt like a realistic example of how technical knowledge develops over time.
 
-- Expansion of Cloud Ecosystem Knowledge: Gained a comprehensive overview of the Amazon Web Services (AWS) ecosystem, recognizing the practical application potential and critical role of key service categories in optimizing technical infrastructure.
+The other sessions also gave me a broader view of the technology landscape. Topics such as WebSockets, GraphRAG, Docker, and teamwork were quite different from one another, but together they showed how cloud engineering connects software development, infrastructure, AI, and collaboration.
 
-- Deployment Mindset & System Architecture: Grasped fundamental principles behind configuring and connecting core AWS services to build robust, scalable, and highly available software architecture.
+## Experience and Reflection
 
-- Analytical & Problem-Solving Skills: Refined quick-thinking and problem-localization skills through interactive and challenging scenario-based questions, learning how to select appropriate cloud services under real-world constraints.
+I arrived early, so the photo I took was before the room became busy. Looking back, I actually like that it captures the beginning of the day before all of the talks and discussions started.
 
-- Awareness of Tech Industry Trends: Attained a clearer perspective on the broader cloud computing landscape in the digital era, helping to identify relevant learning pathways and professional skills for future development.
+![Arriving early at the FCAJ Community Day event](/images/4-EventsParticipated/event_6.6.jpg)
 
-### Experience & Photos
+*The presentation area before the event started.*
 
-- Event Atmosphere & Interaction: The workshop delivered a highly vibrant, inspiring, and collaborative learning environment. The gamified team-based Q&A structure transformed the session from passive listening into an engaging, interactive experience that fostered team spirit and networking.
-
-- Personal Reflections: Engaging in real-time discussions and exploring technical scenarios made complex concepts far more intuitive and memorable. The event provided a great balance of reinforcing foundational knowledge while introducing fresh angles on leveraging cloud technology for real-world software solutions.
-
-- Overall Takeaway: It was a thoroughly rewarding learning experience that greatly boosted my motivation to dive deeper into cloud architecture and pursue further technical competencies in AWS.
+The biggest takeaway for me was not one particular AWS service. It was seeing that there are many possible paths into cloud and technology, and that becoming good in one area often starts by understanding the systems around it.
